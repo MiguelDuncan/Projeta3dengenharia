@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Cog } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -35,10 +35,11 @@ export default function Navbar() {
           onClick={() => handleNav('#inicio')}
           className="flex items-center gap-3 group"
         >
-          <div className="relative w-10 h-10 flex items-center justify-center">
-            <div className="absolute inset-0 border-2 border-[#f97316] rotate-45 group-hover:rotate-[55deg] transition-transform duration-300" />
-            <Cog size={18} className="text-[#f97316] relative z-10" />
-          </div>
+          <img
+            src="/IMG_20260505_233015_021.webp"
+            alt="Projeta3D Logo"
+            className="w-10 h-10 object-contain hover:opacity-80 transition-opacity"
+          />
           <div className="flex flex-col leading-none">
             <span className="text-white font-black text-lg tracking-wider">PROJETA<span className="text-[#f97316]">3D</span></span>
             <span className="text-[#6b7280] text-[10px] tracking-[0.2em] uppercase">Engenharia</span>

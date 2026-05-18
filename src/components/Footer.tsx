@@ -1,4 +1,4 @@
-import { Cog, Phone, Instagram, Mail, MapPin } from 'lucide-react';
+import { Phone, Instagram, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   const scrollTo = (id: string) =>
@@ -11,10 +11,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="relative w-10 h-10 flex items-center justify-center">
-                <div className="absolute inset-0 border-2 border-[#f97316] rotate-45" />
-                <Cog size={18} className="text-[#f97316] relative z-10" />
-              </div>
+              <img
+                src="/IMG_20260505_233015_021.webp"
+                alt="Projeta3D Logo"
+                className="w-10 h-10 object-contain"
+              />
               <div className="flex flex-col leading-none">
                 <span className="text-white font-black text-lg tracking-wider">
                   PROJETA<span className="text-[#f97316]">3D</span>
