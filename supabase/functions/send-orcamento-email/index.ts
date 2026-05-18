@@ -1,3 +1,5 @@
+import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
@@ -23,13 +25,28 @@ Deno.serve(async (req: Request) => {
   try {
     const data: OrcamentoPayload = await req.json();
 
-    const emailContent = `
+    if (!data.nome || !data.email || !data.descricao) {
+      return new Response(
+        JSON.stringify({ success: false, error: "Campos obrigatórios faltando" }),
+        {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        }
+      );
+    }
+
+    const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    if (!resendApiKey) {
+      throw new Error("RESEND_API_KEY não configurada");
+    }
+
+    const emailHtml = `
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <style>
-    body { font-family: Arial, sans-serif; background-color: #f5f5f5; }
+    body { font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 20px; }
     .container { max-width: 600px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
     .header { border-bottom: 3px solid #f97316; padding-bottom: 20px; margin-bottom: 30px; }
     .header h1 { color: #070b14; margin: 0; font-size: 24px; }
@@ -43,7 +60,7 @@ Deno.serve(async (req: Request) => {
 <body>
   <div class="container">
     <div class="header">
-      <h1>Nova Solicitação de Orçamento</h1>
+      <h1>Nova Solicitacao de Orcamento</h1>
       <p>Projeta3D Engenharia</p>
     </div>
 
@@ -54,7 +71,7 @@ Deno.serve(async (req: Request) => {
 
     <div class="field">
       <div class="field-label">E-mail</div>
-      <div class="field-value"><a href="mailto:${escapeHtml(data.email)}" style="color: #f97316; text-decoration: none;">${escapeHtml(data.email)}</a></div>
+      <div class="field-value">${escapeHtml(data.email)}</div>
     </div>
 
     <div class="field">
@@ -63,17 +80,17 @@ Deno.serve(async (req: Request) => {
     </div>
 
     <div class="field">
-      <div class="field-label">Serviço Solicitado</div>
+      <div class="field-label">Servico Solicitado</div>
       <div class="field-value">${escapeHtml(data.servico)}</div>
     </div>
 
     <div class="field">
-      <div class="field-label">Descrição do Projeto</div>
+      <div class="field-label">Descricao do Projeto</div>
       <div class="field-value">${escapeHtml(data.descricao).replace(/\n/g, "<br>")}</div>
     </div>
 
     <div class="footer">
-      <p>Esta solicitação foi enviada via formulário do site Projeta3D Engenharia.</p>
+      <p>Enviado via formulario do site Projeta3D Engenharia.</p>
       <p>Data: ${new Date().toLocaleString("pt-BR")}</p>
     </div>
   </div>
@@ -81,19 +98,19 @@ Deno.serve(async (req: Request) => {
 </html>
 `;
 
-    const emailPlainText = `
-Nova Solicitação de Orçamento - Projeta3D Engenharia
+    const emailText = `
+Nova Solicitacao de Orcamento - Projeta3D Engenharia
 
 Nome: ${data.nome}
 E-mail: ${data.email}
 Telefone: ${data.telefone || "-"}
-Serviço: ${data.servico}
+Servico: ${data.servico}
 
-Descrição:
+Descricao:
 ${data.descricao}
 
 ---
-Esta solicitação foi enviada via formulário do site.
+Enviado via formulario do site.
 Data: ${new Date().toLocaleString("pt-BR")}
 `;
 
@@ -101,32 +118,29 @@ Data: ${new Date().toLocaleString("pt-BR")}
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${Deno.env.get("RESEND_API_KEY")}`,
+        Authorization: `Bearer ${resendApiKey}`,
       },
       body: JSON.stringify({
-        from: "noreply@projeta3djf.com",
+        from: "Projeta3D <onboarding@resend.dev>",
         to: "contato@projeta3djf.com",
-        subject: `Novo Orçamento: ${data.nome} - ${data.servico}`,
-        html: emailContent,
-        text: emailPlainText,
+        subject: `Novo Orcamento: ${data.nome} - ${data.servico}`,
+        html: emailHtml,
+        text: emailText,
         reply_to: data.email,
       }),
     });
 
     if (!response.ok) {
-      const error = await response.text();
-      console.error("Resend API error:", error);
-      throw new Error(`Email service error: ${response.status}`);
+      const errorText = await response.text();
+      console.error("Resend API error:", response.status, errorText);
+      throw new Error(`Resend API error: ${response.status}`);
     }
 
     return new Response(
       JSON.stringify({ success: true, message: "Email enviado com sucesso" }),
       {
         status: 200,
-        headers: {
-          ...corsHeaders,
-          "Content-Type": "application/json",
-        },
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
   } catch (error) {
@@ -138,10 +152,7 @@ Data: ${new Date().toLocaleString("pt-BR")}
       }),
       {
         status: 500,
-        headers: {
-          ...corsHeaders,
-          "Content-Type": "application/json",
-        },
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
       }
     );
   }
