@@ -23,12 +23,30 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    const { error } = await supabase.from('orcamentos').insert([form]);
-    if (error) {
-      setStatus('error');
-    } else {
+
+    try {
+      // Save to database
+      const { error: dbError } = await supabase.from('orcamentos').insert([form]);
+      if (dbError) throw dbError;
+
+      // Send email via Edge Function
+      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-orcamento-email`;
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) throw new Error('Erro ao enviar email');
+
       setStatus('success');
       setForm(initialForm);
+    } catch (err) {
+      console.error(err);
+      setStatus('error');
     }
   };
 
