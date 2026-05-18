@@ -98,7 +98,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="mailto:projeta3djf@gmail.com"
+                href="mailto:contato@projeta3djf.com"
                 className="group flex items-center gap-4 border border-[#1a2540] hover:border-[#f97316]/50 bg-[#0d1426] px-5 py-4 transition-all duration-200"
               >
                 <div className="w-10 h-10 bg-[#f97316]/10 flex items-center justify-center flex-shrink-0">
@@ -106,7 +106,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-[#6b7280] text-xs mb-0.5">E-mail</p>
-                  <p className="text-white font-semibold text-sm">projeta3djf@gmail.com</p>
+                  <p className="text-white font-semibold text-sm">contato@projeta3djf.com</p>
                 </div>
               </a>
             </div>

@@ -27,9 +27,14 @@ export default function Footer() {
               Modelagem 3D, Impressão 3D e Projetos Mecânicos com precisão e tecnologia de ponta
               em Juiz de Fora — MG.
             </p>
-            <div className="flex items-center gap-1.5 text-[#6b7280] text-xs">
-              <MapPin size={12} className="text-[#f97316]" />
-              Juiz de Fora — MG, Brasil
+            <div className="flex flex-col gap-2 text-[#6b7280] text-xs mt-4 pt-4 border-t border-[#1a2540]">
+              <div className="flex items-center gap-1.5">
+                <MapPin size={12} className="text-[#f97316]" />
+                Juiz de Fora — MG, Brasil
+              </div>
+              <div className="text-[#374151]">
+                CNPJ: <span className="text-[#6b7280] font-medium">66.523.308/0001-20</span>
+              </div>
             </div>
           </div>
 
@@ -83,11 +88,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:projeta3djf@gmail.com"
+                  href="mailto:contato@projeta3djf.com"
                   className="flex items-center gap-3 text-[#6b7280] hover:text-[#f97316] text-sm transition-colors"
                 >
                   <Mail size={14} className="text-[#f97316]" />
-                  projeta3djf@gmail.com
+                  contato@projeta3djf.com
                 </a>
               </li>
             </ul>
