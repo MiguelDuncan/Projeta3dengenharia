@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  *, ::before, ::after {
-    border-color: transparent !important;
-  }
+/* Remove a borda fantasma cinza que o Tailwind injeta por padrão nos grids/divisores */
+*, ::before, ::after {
+  border-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #070b14;
 }
 
 body {
