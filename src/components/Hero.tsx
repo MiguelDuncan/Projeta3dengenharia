@@ -74,16 +74,16 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Stats row - Sem a linha cinza vazada no topo e com os blocos laranjas recuperados */}
-        <div className="mt-20 grid grid-cols-3 gap-4 max-w-2xl mx-auto w-full bg-transparent">
+        {/* Stats row */}
+        <div className="mt-20 grid grid-cols-3 gap-px border border-[#1a2540] bg-[#1a2540] max-w-xl mx-auto">
           {[
             { value: '200+', label: 'Projetos Entregues' },
             { value: '100%', label: 'Precisão Técnica' },
             { value: '7', label: 'Materiais Técnicos' },
           ].map((s) => (
-            <div key={s.label} className="bg-[#0d1426] border border-[#f97316]/30 hover:border-[#f97316] rounded-xl px-4 py-5 text-center flex flex-col justify-center items-center shadow-xl transition-colors duration-300">
-              <div className="text-[#f97316] font-black text-2xl md:text-3xl leading-none">{s.value}</div>
-              <div className="text-[#6b7280] text-[11px] font-medium tracking-wide mt-2 whitespace-nowrap">{s.label}</div>
+            <div key={s.label} className="bg-[#0d1426] px-6 py-4 text-center">
+              <div className="text-[#f97316] font-black text-2xl">{s.value}</div>
+              <div className="text-[#6b7280] text-xs tracking-wide mt-1">{s.label}</div>
             </div>
           ))}
         </div>
