@@ -23,21 +23,6 @@ export default function Hero() {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#f97316]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-[#f97316]/5 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Tech circuit lines */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <line x1="0" y1="30%" x2="30%" y2="30%" stroke="#f97316" strokeWidth="1" />
-        <circle cx="30%" cy="30%" r="4" fill="#f97316" />
-        <line x1="30%" y1="30%" x2="30%" y2="70%" stroke="#f97316" strokeWidth="1" />
-        <circle cx="30%" cy="70%" r="4" fill="#f97316" />
-        <line x1="70%" y1="20%" x2="100%" y2="20%" stroke="#f97316" strokeWidth="1" />
-        <circle cx="70%" cy="20%" r="4" fill="#f97316" />
-        <line x1="70%" y1="20%" x2="70%" y2="80%" stroke="#f97316" strokeWidth="1" />
-        <circle cx="70%" cy="80%" r="4" fill="#f97316" />
-      </svg>
-
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Eyebrow tag */}
         <div className="inline-flex items-center gap-2 border border-[#f97316]/40 text-[#f97316] text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 mb-8">
@@ -74,7 +59,7 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Stats row - Estrutura totalmente independente e livre de linhas vazadas */}
+        {/* Stats row - Estrutura limpa, sem dependência de grids colados ou vazamentos */}
         <div className="mt-20 flex flex-col md:flex-row gap-6 max-w-3xl mx-auto w-full justify-center items-center">
           {[
             { value: '200+', label: 'Projetos Entregues' },
@@ -102,3 +87,4 @@ export default function Hero() {
     </section>
   );
 }
+
