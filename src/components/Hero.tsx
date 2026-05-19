@@ -11,7 +11,7 @@ export default function Hero() {
     >
       {/* Blueprint grid background */}
       <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
             'linear-gradient(#4a90d9 1px, transparent 1px), linear-gradient(90deg, #4a90d9 1px, transparent 1px)',
@@ -74,19 +74,16 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Stats row - Blocos flutuantes independentes restaurados perfeitamente */}
-        <div className="mt-20 flex flex-col md:flex-row gap-6 max-w-3xl mx-auto w-full justify-center items-center">
+        {/* Stats row */}
+        <div className="mt-20 grid grid-cols-3 gap-px border border-[#1a2540] bg-[#1a2540] max-w-xl mx-auto">
           {[
             { value: '200+', label: 'Projetos Entregues' },
             { value: '100%', label: 'Precisão Técnica' },
             { value: '7', label: 'Materiais Técnicos' },
           ].map((s) => (
-            <div 
-              key={s.label} 
-              className="bg-[#0d1426] border border-[#f97316]/20 rounded-xl px-8 py-5 text-center flex flex-col justify-center items-center w-full md:w-48 h-24 shadow-2xl transition-all duration-300 hover:border-[#f97316]/60"
-            >
-              <div className="text-[#f97316] font-black text-2xl md:text-3xl leading-none">{s.value}</div>
-              <div className="text-[#6b7280] text-[11px] font-medium tracking-wide mt-2 whitespace-nowrap">{s.label}</div>
+            <div key={s.label} className="bg-[#0d1426] px-6 py-4 text-center">
+              <div className="text-[#f97316] font-black text-2xl">{s.value}</div>
+              <div className="text-[#6b7280] text-xs tracking-wide mt-1">{s.label}</div>
             </div>
           ))}
         </div>
