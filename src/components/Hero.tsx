@@ -54,7 +54,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-[#9ca3af] text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          Da modelagem ao product final — desenvolvemos peças mecânicas, protótipos funcionais
+          Da modelagem ao produto final — desenvolvemos peças mecânicas, protótipos funcionais
           e projetos de engenharia sob medida para sua necessidade.
         </p>
 
@@ -74,16 +74,19 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Stats row - Limpo e blindado contra herança de CSS */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#1a2540] max-w-2xl mx-auto w-full bg-[#0d1426] border-0 outline-none p-0 overflow-hidden">
+        {/* Stats row - Estrutura totalmente independente e livre de linhas vazadas */}
+        <div className="mt-20 flex flex-col md:flex-row gap-6 max-w-3xl mx-auto w-full justify-center items-center">
           {[
             { value: '200+', label: 'Projetos Entregues' },
             { value: '100%', label: 'Precisão Técnica' },
             { value: '7', label: 'Materiais Técnicos' },
           ].map((s) => (
-            <div key={s.label} className="bg-[#0d1426] px-6 py-4 text-center border-0 outline-none flex flex-col justify-center items-center">
-              <div className="text-[#f97316] font-black text-2xl">{s.value}</div>
-              <div className="text-[#6b7280] text-xs tracking-wide mt-1 whitespace-nowrap">{s.label}</div>
+            <div 
+              key={s.label} 
+              className="bg-[#0d1426] border border-[#1a2540] rounded-xl px-8 py-5 text-center flex flex-col justify-center items-center w-full md:w-48 h-24 shadow-xl"
+            >
+              <div className="text-[#f97316] font-black text-2xl md:text-3xl leading-none">{s.value}</div>
+              <div className="text-[#6b7280] text-[11px] font-medium tracking-wide mt-2 whitespace-nowrap">{s.label}</div>
             </div>
           ))}
         </div>
@@ -99,4 +102,3 @@ export default function Hero() {
     </section>
   );
 }
-
