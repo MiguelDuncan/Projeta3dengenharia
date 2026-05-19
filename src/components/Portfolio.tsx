@@ -54,6 +54,7 @@ const customProjects: TechnicalProject[] = [
       { label: 'Produto Final Impresso', image: '/botao-impresso.jpg' }
     ]
   }
+  video: '/encaixe-video.mp4'
 ];
 
 export default function Portfolio() {
@@ -120,7 +121,7 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <div className="lg:w-2/3 flex flex-col justify-center">
+              <div className="lg:w-2/3 flex flex-col justify-center gap-4">
                 <div className={`grid gap-4 ${project.stages.length === 1 ? 'grid-cols-1 max-w-md mx-auto w-full' : 'grid-cols-1 sm:grid-cols-3'}`}>
                   {project.stages.map((stage) => {
                     const imageKey = `${project.title}-${stage.label}`;
@@ -150,6 +151,24 @@ export default function Portfolio() {
                     );
                   })}
                 </div>
+                {/* Reprodutor de Vídeo dinâmico para a Peça de Encaixe */}
+                {'video' in project && project.video && (
+                  <div className="flex flex-col bg-[#070b14] border border-[#1a2540] p-2 w-full mt-2">
+                    <div className="relative aspect-video w-full overflow-hidden bg-[#0a0f1e] border border-[#1a2540]/60">
+                      <video 
+                        src={project.video} 
+                        controls 
+                        muted 
+                        loop 
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-center mt-2 py-1 bg-[#0d1426] border border-[#1a2540]">
+                      <span className="text-white font-mono text-xs font-bold">Demonstração em Vídeo (Encaixe / Funcionamento)</span>
+                    </div>
+                  </div>
+                )}
               </div>
 
             </div>
