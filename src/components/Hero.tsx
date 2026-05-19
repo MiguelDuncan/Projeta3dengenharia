@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#070b14]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#070b14] z-10"
     >
       {/* Blueprint grid background */}
       <div
@@ -38,7 +38,7 @@ export default function Hero() {
         <circle cx="70%" cy="80%" r="4" fill="#f97316" />
       </svg>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-20 max-w-6xl mx-auto px-6 text-center pt-20 pb-28">
         {/* Eyebrow tag */}
         <div className="inline-flex items-center gap-2 border border-[#f97316]/40 text-[#f97316] text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 mb-8">
           <span className="w-2 h-2 bg-[#f97316] rounded-full animate-pulse" />
@@ -75,13 +75,13 @@ export default function Hero() {
         </div>
 
         {/* Stats row */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#1a2540] max-w-3xl mx-auto w-full overflow-hidden rounded-lg shadow-xl">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto w-full">
           {[
             { value: '200+', label: 'Projetos Entregues' },
             { value: '100%', label: 'Precisão Técnica' },
             { value: '7', label: 'Materiais Técnicos' },
           ].map((s) => (
-            <div key={s.label} className="bg-[#0d1426] px-6 py-6 flex flex-col justify-center items-center min-w-0">
+            <div key={s.label} className="bg-[#0d1426] border border-[#1a2540] rounded-xl px-6 py-5 flex flex-col justify-center items-center">
               <div className="text-[#f97316] font-black text-2xl md:text-3xl">{s.value}</div>
               <div className="text-[#6b7280] text-xs tracking-wide mt-1 whitespace-nowrap text-center">{s.label}</div>
             </div>
@@ -92,7 +92,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <button
         onClick={() => scrollTo('#servicos')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#374151] hover:text-[#f97316] transition-colors animate-bounce"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[#374151] hover:text-[#f97316] transition-colors animate-bounce z-30"
       >
         <ChevronDown size={28} />
       </button>
