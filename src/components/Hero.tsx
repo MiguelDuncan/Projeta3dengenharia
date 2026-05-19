@@ -9,42 +9,38 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#070b14]"
     >
-      {/* Background Decorativo - Isolado de interações */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        {/* Blueprint grid background */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              'linear-gradient(#4a90d9 1px, transparent 1px), linear-gradient(90deg, #4a90d9 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-          }}
-        />
+      {/* Blueprint grid background */}
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(#4a90d9 1px, transparent 1px), linear-gradient(90deg, #4a90d9 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }}
+      />
 
-        {/* Radial glow - orange */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#f97316]/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-[#f97316]/5 rounded-full blur-3xl" />
+      {/* Radial glow - orange */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#f97316]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-[#f97316]/5 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Tech circuit lines */}
-        <svg
-          className="absolute inset-0 w-full h-full opacity-[0.06]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line x1="0" y1="30%" x2="30%" y2="30%" stroke="#f97316" strokeWidth="1" />
-          <circle cx="30%" cy="30%" r="4" fill="#f97316" />
-          <line x1="30%" y1="30%" x2="30%" y2="70%" stroke="#f97316" strokeWidth="1" />
-          <circle cx="30%" cy="70%" r="4" fill="#f97316" />
-          <line x1="70%" y1="20%" x2="100%" y2="20%" stroke="#f97316" strokeWidth="1" />
-          <circle cx="70%" cy="20%" r="4" fill="#f97316" />
-          <line x1="70%" y1="20%" x2="70%" y2="80%" stroke="#f97316" strokeWidth="1" />
-          <circle cx="70%" cy="80%" r="4" fill="#f97316" />
-        </svg>
-      </div>
+      {/* Tech circuit lines */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line x1="0" y1="30%" x2="30%" y2="30%" stroke="#f97316" strokeWidth="1" />
+        <circle cx="30%" cy="30%" r="4" fill="#f97316" />
+        <line x1="30%" y1="30%" x2="30%" y2="70%" stroke="#f97316" strokeWidth="1" />
+        <circle cx="30%" cy="70%" r="4" fill="#f97316" />
+        <line x1="70%" y1="20%" x2="100%" y2="20%" stroke="#f97316" strokeWidth="1" />
+        <circle cx="70%" cy="20%" r="4" fill="#f97316" />
+        <line x1="70%" y1="20%" x2="70%" y2="80%" stroke="#f97316" strokeWidth="1" />
+        <circle cx="70%" cy="80%" r="4" fill="#f97316" />
+      </svg>
 
-      {/* Conteúdo Principal - Camada Superior Garantida */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center pt-24 pb-12">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Eyebrow tag */}
-        <div className="inline-flex items-center gap-2 border border-[#f97316]/40 text-[#f97316] text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 mb-8Box">
+        <div className="inline-flex items-center gap-2 border border-[#f97316]/40 text-[#f97316] text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 mb-8">
           <span className="w-2 h-2 bg-[#f97316] rounded-full animate-pulse" />
           Juiz de Fora — MG
         </div>
@@ -58,11 +54,11 @@ export default function Hero() {
         </h1>
 
         <p className="text-[#9ca3af] text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          Da modelagem ao produto final — desenvolvemos peças mecânicas, protótipos funcionais
+          Da modelagem ao product final — desenvolvemos peças mecânicas, protótipos funcionais
           e projetos de engenharia sob medida para sua necessidade.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={() => scrollTo('#contato')}
             className="group flex items-center gap-3 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold text-base px-8 py-4 transition-all duration-200 hover:shadow-[0_0_32px_rgba(249,115,22,0.5)]"
@@ -78,16 +74,16 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Stats row - Totalmente Isolado, sem bordas externas vazando */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#1a2540] max-w-3xl mx-auto w-full rounded-xl overflow-hidden shadow-2xl border border-[#1a2540]">
+        {/* Stats row - Limpo e blindado contra herança de CSS */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#1a2540] max-w-2xl mx-auto w-full bg-[#0d1426] border-0 outline-none p-0 overflow-hidden">
           {[
             { value: '200+', label: 'Projetos Entregues' },
             { value: '100%', label: 'Precisão Técnica' },
             { value: '7', label: 'Materiais Técnicos' },
           ].map((s) => (
-            <div key={s.label} className="bg-[#0d1426] px-6 py-6 flex flex-col justify-center items-center">
-              <div className="text-[#f97316] font-black text-2xl md:text-3xl">{s.value}</div>
-              <div className="text-[#6b7280] text-xs tracking-wide mt-1 whitespace-nowrap text-center">{s.label}</div>
+            <div key={s.label} className="bg-[#0d1426] px-6 py-4 text-center border-0 outline-none flex flex-col justify-center items-center">
+              <div className="text-[#f97316] font-black text-2xl">{s.value}</div>
+              <div className="text-[#6b7280] text-xs tracking-wide mt-1 whitespace-nowrap">{s.label}</div>
             </div>
           ))}
         </div>
@@ -96,10 +92,11 @@ export default function Hero() {
       {/* Scroll indicator */}
       <button
         onClick={() => scrollTo('#servicos')}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[#374151] hover:text-[#f97316] transition-colors animate-bounce z-20"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#374151] hover:text-[#f97316] transition-colors animate-bounce"
       >
         <ChevronDown size={28} />
       </button>
     </section>
   );
 }
+
