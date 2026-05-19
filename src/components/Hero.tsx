@@ -59,7 +59,7 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Stats row - Estrutura limpa, sem dependência de grids colados ou vazamentos */}
+        {/* Stats row - Blocos flutuantes independentes sem linhas de divisão */}
         <div className="mt-20 flex flex-col md:flex-row gap-6 max-w-3xl mx-auto w-full justify-center items-center">
           {[
             { value: '200+', label: 'Projetos Entregues' },
@@ -68,7 +68,7 @@ export default function Hero() {
           ].map((s) => (
             <div 
               key={s.label} 
-              className="bg-[#0d1426] border border-[#1a2540] rounded-xl px-8 py-5 text-center flex flex-col justify-center items-center w-full md:w-48 h-24 shadow-xl"
+              className="bg-[#0d1426] border-0 rounded-xl px-8 py-5 text-center flex flex-col justify-center items-center w-full md:w-48 h-24 shadow-2xl"
             >
               <div className="text-[#f97316] font-black text-2xl md:text-3xl leading-none">{s.value}</div>
               <div className="text-[#6b7280] text-[11px] font-medium tracking-wide mt-2 whitespace-nowrap">{s.label}</div>
@@ -87,4 +87,3 @@ export default function Hero() {
     </section>
   );
 }
-
