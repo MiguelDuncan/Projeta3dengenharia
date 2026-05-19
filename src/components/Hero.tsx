@@ -75,15 +75,15 @@ export default function Hero() {
         </div>
 
         {/* Stats row */}
-        <div className="mt-20 grid grid-cols-3 gap-px border border-[#1a2540] bg-[#1a2540] max-w-3xl mx-auto w-full">
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-px border border-[#1a2540] bg-[#1a2540] max-w-3xl mx-auto w-full overflow-hidden">
           {[
             { value: '200+', label: 'Projetos Entregues' },
             { value: '100%', label: 'Precisão Técnica' },
             { value: '7', label: 'Materiais Técnicos' },
           ].map((s) => (
-            <div key={s.label} className="bg-[#0d1426] px-6 py-4 text-center">
-              <div className="text-[#f97316] font-black text-2xl">{s.value}</div>
-              <div className="text-[#6b7280] text-xs tracking-wide mt-1">{s.label}</div>
+            <div key={s.label} className="bg-[#0d1426] px-6 py-5 flex flex-col justify-center items-center min-w-0">
+              <div className="text-[#f97316] font-black text-2xl md:text-3xl">{s.value}</div>
+              <div className="text-[#6b7280] text-xs tracking-wide mt-1 whitespace-nowrap text-center">{s.label}</div>
             </div>
           ))}
         </div>
