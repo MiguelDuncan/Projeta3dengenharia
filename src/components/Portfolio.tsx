@@ -14,6 +14,7 @@ interface TechnicalProject {
   material: string;
   specs: string[];
   stages: ProjectStage[];
+  video?: string; // Informa ao sistema que alguns projetos podem ter vídeo
 }
 
 const customProjects: TechnicalProject[] = [
@@ -41,7 +42,8 @@ const customProjects: TechnicalProject[] = [
       { label: 'Peça Original', image: '/encaixe-original.jpg' },
       { label: 'Modelo CAD 3D', image: '/encaixe-cad.jpg' },
       { label: 'Impressão 3D', image: '/encaixe-impresso.jpg' }
-    ]
+    ],
+    video: '/encaixe-video.mp4' // <--- Movido para o lugar correto com a vírgula certa!
   },
   {
     title: 'Botão de Painel de Aeronave',
@@ -49,12 +51,11 @@ const customProjects: TechnicalProject[] = [
     badge: 'Setor Aeronáutico',
     description: 'Manufatura aditiva focada na fidelidade estética e textura para componentes de cockpit. Superfície com acabamento impecável para testes ergonômicos e validação visual de comandos.',
     material: 'ABS premium, resistente a altas temperaturas, pressão e intempéries',
-    specs: ['Acabamento Estético', 'Fidelidade Ergonômica', 'Resolução impecavél'],
+    specs: ['Acabamento Estético', 'Fidelidade Ergonômica', 'Resolução impecável'],
     stages: [
       { label: 'Produto Final Impresso', image: '/botao-impresso.jpg' }
     ]
   }
-  video: '/encaixe-video.mp4'
 ];
 
 export default function Portfolio() {
@@ -151,8 +152,8 @@ export default function Portfolio() {
                     );
                   })}
                 </div>
-                {/* Reprodutor de Vídeo dinâmico para a Peça de Encaixe */}
-                {'video' in project && project.video && (
+
+                {project.video && (
                   <div className="flex flex-col bg-[#070b14] border border-[#1a2540] p-2 w-full mt-2">
                     <div className="relative aspect-video w-full overflow-hidden bg-[#0a0f1e] border border-[#1a2540]/60">
                       <video 
