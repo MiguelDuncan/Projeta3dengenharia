@@ -47,7 +47,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servicos" className="bg-[#070b14] py-24 relative overflow-hidden">
+    <section id="servicos" className="bg-[#070b14] py-24 relative overflow-hidden clear-both block">
       {/* Subtle grid */}
       <div
         className="absolute inset-0 opacity-[0.025]"
