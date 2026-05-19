@@ -48,8 +48,8 @@ const customProjects: TechnicalProject[] = [
     category: 'Prototipagem de Alta Resolução',
     badge: 'Setor Aeronáutico',
     description: 'Manufatura aditiva focada na fidelidade estética e textura para componentes de cockpit. Superfície com acabamento impecável para testes ergonômicos e validação visual de comandos.',
-    material: 'Resina Premium de Alta Definição',
-    specs: ['Acabamento Estético', 'Fidelidade Ergonômica', 'Resolução Microscópica'],
+    material: 'ABS premium, resistente a altas temperaturas, pressão e intempéries',
+    specs: ['Acabamento Estético', 'Fidelidade Ergonômica', 'Resolução impecavél'],
     stages: [
       { label: 'Produto Final Impresso', image: '/botao-impresso.jpg' }
     ]
