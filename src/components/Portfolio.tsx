@@ -14,7 +14,7 @@ interface TechnicalProject {
   material: string;
   specs: string[];
   stages: ProjectStage[];
-  video?: string; // Informa ao sistema que alguns projetos podem ter vídeo
+  video?: string;
 }
 
 const customProjects: TechnicalProject[] = [
@@ -43,14 +43,14 @@ const customProjects: TechnicalProject[] = [
       { label: 'Modelo CAD 3D', image: '/encaixe-cad.jpg' },
       { label: 'Impressão 3D', image: '/encaixe-impresso.jpg' }
     ],
-    video: '/encaixe-video.mp4' // <--- Movido para o lugar correto com a vírgula certa!
+    video: '/encaixe-video.mp4' // O vídeo agora está guardado corretamente dentro do projeto do encaixe!
   },
   {
     title: 'Botão de Painel de Aeronave',
     category: 'Prototipagem de Alta Resolução',
     badge: 'Setor Aeronáutico',
     description: 'Manufatura aditiva focada na fidelidade estética e textura para componentes de cockpit. Superfície com acabamento impecável para testes ergonômicos e validação visual de comandos.',
-    material: 'ABS premium, resistente a altas temperaturas, pressão e intempéries',
+    material: 'ABS premium, resistente a altas temperaturas, pressure e intempéries',
     specs: ['Acabamento Estético', 'Fidelidade Ergonômica', 'Resolução impecável'],
     stages: [
       { label: 'Produto Final Impresso', image: '/botao-impresso.jpg' }
