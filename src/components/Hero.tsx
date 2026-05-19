@@ -11,7 +11,7 @@ export default function Hero() {
     >
       {/* Blueprint grid background */}
       <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
             'linear-gradient(#4a90d9 1px, transparent 1px), linear-gradient(90deg, #4a90d9 1px, transparent 1px)',
@@ -22,6 +22,21 @@ export default function Hero() {
       {/* Radial glow - orange */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#f97316]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-[#f97316]/5 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Tech circuit lines */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line x1="0" y1="30%" x2="30%" y2="30%" stroke="#f97316" strokeWidth="1" />
+        <circle cx="30%" cy="30%" r="4" fill="#f97316" />
+        <line x1="30%" y1="30%" x2="30%" y2="70%" stroke="#f97316" strokeWidth="1" />
+        <circle cx="30%" cy="70%" r="4" fill="#f97316" />
+        <line x1="70%" y1="20%" x2="100%" y2="20%" stroke="#f97316" strokeWidth="1" />
+        <circle cx="70%" cy="20%" r="4" fill="#f97316" />
+        <line x1="70%" y1="20%" x2="70%" y2="80%" stroke="#f97316" strokeWidth="1" />
+        <circle cx="70%" cy="80%" r="4" fill="#f97316" />
+      </svg>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Eyebrow tag */}
@@ -59,17 +74,14 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Stats row - Blocos flutuantes independentes sem linhas de divisão */}
-        <div className="mt-20 flex flex-col md:flex-row gap-6 max-w-3xl mx-auto w-full justify-center items-center">
+        {/* Stats row - Sem nenhuma borda lateral ou linha vazando nos números */}
+        <div className="mt-20 grid grid-cols-3 max-w-2xl mx-auto w-full bg-transparent gap-4">
           {[
             { value: '200+', label: 'Projetos Entregues' },
             { value: '100%', label: 'Precisão Técnica' },
             { value: '7', label: 'Materiais Técnicos' },
           ].map((s) => (
-            <div 
-              key={s.label} 
-              className="bg-[#0d1426] border-0 rounded-xl px-8 py-5 text-center flex flex-col justify-center items-center w-full md:w-48 h-24 shadow-2xl"
-            >
+            <div key={s.label} className="bg-[#0d1426] border border-[#1a2540] rounded-xl px-4 py-5 text-center flex flex-col justify-center items-center">
               <div className="text-[#f97316] font-black text-2xl md:text-3xl leading-none">{s.value}</div>
               <div className="text-[#6b7280] text-[11px] font-medium tracking-wide mt-2 whitespace-nowrap">{s.label}</div>
             </div>
