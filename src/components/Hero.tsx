@@ -75,7 +75,7 @@ export default function Hero() {
         </div>
 
         {/* Stats row */}
-        <div className="mt-20 grid grid-cols-3 gap-px border border-[#1a2540] bg-[#1a2540] max-w-xl mx-auto">
+        <div className="mt-20 grid grid-cols-3 gap-px border border-[#1a2540] bg-[#1a2540] max-w-3xl mx-auto w-full">
           {[
             { value: '200+', label: 'Projetos Entregues' },
             { value: '100%', label: 'Precisão Técnica' },
