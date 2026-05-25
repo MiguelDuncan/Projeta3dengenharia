@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Navbar from './Components/Navbar';
+import Hero from './Components/Hero';
+import Services from './Components/Services';
+import About from './Components/About';
+import Portfolio from './Components/Portfolio';
+import FAQ from './Components/FAQ';
+import Contact from './Components/Contact';
+import Footer from './Components/Footer';
 
 // 1. Página Principal (Home)
 const Home = () => {
