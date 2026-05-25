@@ -53,7 +53,7 @@ export default function About() {
 
             <p className="text-[#6b7280] text-base leading-relaxed mb-10">
               Seja para recriar uma peça quebrada que não existe mais no mercado, desenvolver um protótipo
-              funcional ou executar um projeto mecânico completo — trabalhamos com precisão em cada detalhe
+              funcional ou executar um projeto mecânico completo — trabalhamos com precisão inigualável em cada detalhe
               e comprometimento total com o resultado.
             </p>
 
@@ -101,9 +101,6 @@ export default function About() {
                   {i + 1}
                 </div>
                 <span className="text-[#9ca3af] text-xs font-medium">{step}</span>
-                {i < 4 && (
-                  <div className="hidden md:block absolute translate-x-full w-full h-0.5 bg-[#1a2540]" />
-                )}
               </div>
             ))}
           </div>
