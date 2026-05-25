@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X, Box } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export default function Navbar() {
+function NavbarComponent() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -90,3 +90,8 @@ export default function Navbar() {
     </nav>
   );
 }
+
+// Dando o nome de exibição que o validador exige de forma explícita
+NavbarComponent.displayName = 'Navbar';
+
+export default NavbarComponent;
