@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -8,8 +9,8 @@ import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-// 1. Página Principal (Home) declarada da forma tradicional exigida pela Vercel
-function Home() {
+// 1. Página Principal (Home)
+function Home(): React.JSX.Element {
   return (
     <>
       <Hero />
@@ -23,7 +24,7 @@ function Home() {
 }
 
 // 2. Página Nova: Modelagem 3D & CAD
-function ModelagemCADPage() {
+function ModelagemCADPage(): React.JSX.Element {
   return (
     <div className="bg-[#070b14] pt-32 pb-24 text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -47,7 +48,7 @@ function ModelagemCADPage() {
 }
 
 // 3. Página Nova: Impressão 3D
-function Impressao3DPage() {
+function Impressao3DPage(): React.JSX.Element {
   return (
     <div className="bg-[#070b14] pt-32 pb-24 text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -82,7 +83,7 @@ function Impressao3DPage() {
 }
 
 // 4. Página Nova: Engenharia Reversa
-function EngenhariaReversaPage() {
+function EngenhariaReversaPage(): React.JSX.Element {
   return (
     <div className="bg-[#070b14] pt-32 pb-24 text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -105,7 +106,7 @@ function EngenhariaReversaPage() {
   );
 }
 
-export default function App() {
+export default function App(): React.JSX.Element {
   return (
     <Router>
       <div className="min-h-screen bg-[#070b14]">
