@@ -1,4 +1,3 @@
-import React from 'react'; // <-- ESSA LINHA ADICIONADA SOLUCIONA O ERRO DA IMAGEM
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,7 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 // 1. Página Principal (Home)
-function Home() {
+const Home = () => {
   return (
     <>
       <Hero />
@@ -21,10 +20,10 @@ function Home() {
       <Contact />
     </>
   );
-}
+};
 
 // 2. Página Nova: Modelagem 3D & CAD
-function ModelagemCADPage() {
+const ModelagemCADPage = () => {
   return (
     <div className="bg-[#070b14] pt-32 pb-24 text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -45,10 +44,10 @@ function ModelagemCADPage() {
       </div>
     </div>
   );
-}
+};
 
 // 3. Página Nova: Impressão 3D
-function Impressao3DPage() {
+const Impressao3DPage = () => {
   return (
     <div className="bg-[#070b14] pt-32 pb-24 text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -80,10 +79,10 @@ function Impressao3DPage() {
       </div>
     </div>
   );
-}
+};
 
 // 4. Página Nova: Engenharia Reversa
-function EngenhariaReversaPage() {
+const EngenhariaReversaPage = () => {
   return (
     <div className="bg-[#070b14] pt-32 pb-24 text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -104,7 +103,7 @@ function EngenhariaReversaPage() {
       </div>
     </div>
   );
-}
+};
 
 export default function App() {
   return (
