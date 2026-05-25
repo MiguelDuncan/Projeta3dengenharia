@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // <-- ESSA LINHA ADICIONADA SOLUCIONA O ERRO DA IMAGEM
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 // 1. Página Principal (Home)
-function Home(): React.JSX.Element {
+function Home() {
   return (
     <>
       <Hero />
@@ -24,7 +24,7 @@ function Home(): React.JSX.Element {
 }
 
 // 2. Página Nova: Modelagem 3D & CAD
-function ModelagemCADPage(): React.JSX.Element {
+function ModelagemCADPage() {
   return (
     <div className="bg-[#070b14] pt-32 pb-24 text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -48,7 +48,7 @@ function ModelagemCADPage(): React.JSX.Element {
 }
 
 // 3. Página Nova: Impressão 3D
-function Impressao3DPage(): React.JSX.Element {
+function Impressao3DPage() {
   return (
     <div className="bg-[#070b14] pt-32 pb-24 text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -83,7 +83,7 @@ function Impressao3DPage(): React.JSX.Element {
 }
 
 // 4. Página Nova: Engenharia Reversa
-function EngenhariaReversaPage(): React.JSX.Element {
+function EngenhariaReversaPage() {
   return (
     <div className="bg-[#070b14] pt-32 pb-24 text-white min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -106,7 +106,7 @@ function EngenhariaReversaPage(): React.JSX.Element {
   );
 }
 
-export default function App(): React.JSX.Element {
+export default function App() {
   return (
     <Router>
       <div className="min-h-screen bg-[#070b14]">
@@ -122,4 +122,3 @@ export default function App(): React.JSX.Element {
     </Router>
   );
 }
-
