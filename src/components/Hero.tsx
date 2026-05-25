@@ -46,7 +46,7 @@ export default function Hero() {
         </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
-          Seu Projeto,{' '}
+          4 Projeto,{' '}
           <span className="text-[#f97316] block md:inline">Saindo do Papel</span>
           <span className="block text-3xl md:text-4xl lg:text-5xl mt-2 font-bold text-[#d1d5db]">
             com Impressão 3D de Alta Precisão
