@@ -17,7 +17,7 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial, sans-serif;
+      font-family:Arial,sans-serif;
     }
 
     body{
@@ -60,15 +60,42 @@
       font-size:20px;
     }
 
-    .section{
-      padding:80px 0;
+    .cta{
+      background:#f97316;
+      color:white;
+      display:inline-block;
+      padding:16px 32px;
+      margin-top:40px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+      margin-top:60px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border:1px solid #1a2540;
+      transition:0.3s;
+    }
+
+    .gallery img:hover{
+      transform:translateY(-5px);
+      border-color:#f97316;
     }
 
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:24px;
-      margin-top:50px;
+      margin-top:70px;
+      margin-bottom:80px;
     }
 
     .card{
@@ -85,31 +112,10 @@
 
     .card h3{
       margin-bottom:15px;
-      color:white;
     }
 
     .card p{
       color:#9ca3af;
-    }
-
-    .image{
-      width:100%;
-      border:1px solid #1a2540;
-      margin-top:40px;
-    }
-
-    .cta{
-      background:#f97316;
-      color:white;
-      display:inline-block;
-      padding:16px 32px;
-      margin-top:40px;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    .cta:hover{
-      background:#ea6910;
     }
 
   </style>
@@ -117,63 +123,75 @@
 
 <body class="grid-bg">
 
-  <section class="hero">
-    <div class="container">
+<section class="hero">
 
-      <h1>
-        Impressão <span class="orange">3D Profissional</span>
-      </h1>
+  <div class="container">
 
-      <p>
-        Produção de peças técnicas, protótipos funcionais e componentes
-        mecânicos com alta precisão dimensional e acabamento profissional.
-      </p>
+    <h1>
+      Impressão <span class="orange">3D Profissional</span>
+    </h1>
 
-      <a href="/" class="cta">
-        Voltar ao Site
-      </a>
+    <p>
+      Produção de peças técnicas, protótipos funcionais
+      e componentes mecânicos com alta precisão.
+    </p>
+
+    <a href="/" class="cta">
+      Voltar ao Site
+    </a>
+
+    <div class="gallery">
+
+      <img src="/turbina-impressa.jpg">
+
+      <img src="/encaixe-impressao.jpg">
+
+      <img src="/botao-impresso.jpg">
 
     </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
+  </div>
 
-      <img
-        src="/turbina-impressa.jpg"
-        class="image"
-      />
+</section>
 
-      <div class="cards">
+<section>
 
-        <div class="card">
-          <h3>Alta Precisão</h3>
-          <p>
-            Produção com excelente definição e tolerâncias adequadas
-            para aplicações técnicas.
-          </p>
-        </div>
+  <div class="container">
 
-        <div class="card">
-          <h3>Peças Funcionais</h3>
-          <p>
-            Fabricação de componentes resistentes para testes,
-            validações e uso real.
-          </p>
-        </div>
+    <div class="cards">
 
-        <div class="card">
-          <h3>Prototipagem Rápida</h3>
-          <p>
-            Transformamos ideias em peças físicas rapidamente
-            para acelerar seu projeto.
-          </p>
-        </div>
+      <div class="card">
+        <h3>Alta Precisão</h3>
 
+        <p>
+          Impressão de peças técnicas com excelente
+          qualidade dimensional e acabamento profissional.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Peças Funcionais</h3>
+
+        <p>
+          Produção de componentes resistentes para
+          testes, protótipos e aplicações reais.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Prototipagem Rápida</h3>
+
+        <p>
+          Valide seu projeto rapidamente antes
+          da fabricação final.
+        </p>
       </div>
 
     </div>
-  </section>
+
+  </div>
+
+</section>
 
 </body>
 </html>
