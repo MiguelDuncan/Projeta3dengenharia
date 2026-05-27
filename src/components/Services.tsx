@@ -129,40 +129,55 @@ export default function Services() {
         </div>
 
         {/* Bottom CTA strip */}
-        <div className="mt-16 border border-[#f97316]/20 bg-[#f97316]/5 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Bottom CTA strip */}
+<div className="mt-16 border border-[#f97316]/20 bg-[#f97316]/5 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative z-50">
 
-          <div className="flex flex-col gap-4">
+  <div className="flex flex-col gap-4">
 
-            <div className="flex flex-wrap gap-4">
+    <div className="flex flex-wrap gap-4">
 
-              <a
-                href="/impressao-3d.html"
-                className="bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-6 py-3 text-sm transition-colors duration-200"
-              >
-                Página de Impressão 3D
-              </a>
+      <a
+        href="/impressao-3d.html"
+        target="_self"
+        className="cursor-pointer relative z-50 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-6 py-3 text-sm transition-colors duration-200 inline-flex items-center justify-center"
+      >
+        Página de Impressão 3D
+      </a>
 
-              <a
-                href="/modelagem-cad.html"
-                className="bg-[#1a2540] hover:bg-[#24304f] text-white font-bold px-6 py-3 text-sm transition-colors duration-200"
-              >
-                Página de Modelagem CAD
-              </a>
+      <a
+        href="/modelagem-cad.html"
+        target="_self"
+        className="cursor-pointer relative z-50 bg-[#1a2540] hover:bg-[#24304f] text-white font-bold px-6 py-3 text-sm transition-colors duration-200 inline-flex items-center justify-center"
+      >
+        Página de Modelagem CAD
+      </a>
 
-            </div>
+    </div>
 
-            <div>
-              <p className="text-white font-bold text-lg">
-                Precisão em Cada Detalhe.
-              </p>
+    <div>
+      <p className="text-white font-bold text-lg">
+        Precisão em Cada Detalhe.
+      </p>
 
-              <p className="text-[#9ca3af] text-sm">
-                Tem um projeto? Envie uma foto ou ideia — analisamos e desenvolvemos.
-              </p>
-            </div>
+      <p className="text-[#9ca3af] text-sm">
+        Tem um projeto? Envie uma foto ou ideia — analisamos e desenvolvemos.
+      </p>
+    </div>
 
-          </div>
+  </div>
 
+  <button
+    onClick={() =>
+      document
+        .querySelector('#contato')
+        ?.scrollIntoView({ behavior: 'smooth' })
+    }
+    className="flex-shrink-0 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-7 py-3 text-sm transition-colors duration-200 whitespace-nowrap relative z-50"
+  >
+    Solicitar Orçamento
+  </button>
+
+</div>
           <button
             onClick={() =>
               document
