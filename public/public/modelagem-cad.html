@@ -6,88 +6,184 @@
   <meta charset="UTF-8" />
 
   <title>
-    Impressão 3D em Juiz de Fora | Projeta3D Engenharia
+    Modelagem CAD e SolidWorks | Projeta3D Engenharia
   </title>
 
   <meta
     name="description"
-    content="Serviço profissional de impressão 3D em Juiz de Fora. Protótipos, peças mecânicas, engenharia e desenvolvimento de produtos."
+    content="Serviços profissionais de modelagem CAD, SolidWorks, engenharia reversa e projetos mecânicos em Juiz de Fora."
   />
 
   <meta
     name="keywords"
-    content="impressão 3D Juiz de Fora, prototipagem, peças 3D, engenharia mecânica"
+    content="modelagem CAD, SolidWorks, engenharia mecânica, desenho técnico"
   />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    body {
-      background: #070b14;
-      color: white;
-      font-family: Arial;
-      padding: 60px 24px;
-      line-height: 1.7;
-      max-width: 1100px;
-      margin: auto;
+
+    body{
+      margin:0;
+      background:#070b14;
+      color:white;
+      font-family:Arial;
+      line-height:1.7;
     }
 
-    h1 {
-      font-size: 64px;
-      margin-bottom: 20px;
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:60px 24px;
     }
 
-    h2 {
-      margin-top: 60px;
-      color: #f97316;
+    h1{
+      font-size:64px;
+      line-height:1.1;
+      margin-bottom:24px;
     }
 
-    p {
-      color: #d1d5db;
-      font-size: 20px;
+    h2{
+      margin-top:70px;
+      color:#f97316;
+      font-size:38px;
     }
 
-    a {
-      color: #f97316;
+    p{
+      color:#d1d5db;
+      font-size:20px;
     }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .hero img{
+      width:100%;
+      border-radius:18px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+      margin-top:40px;
+    }
+
+    .gallery img{
+      width:100%;
+      border-radius:16px;
+    }
+
+    .box{
+      background:#0d1426;
+      border:1px solid #1a2540;
+      padding:30px;
+      border-radius:16px;
+      margin-top:24px;
+    }
+
+    a{
+      color:#f97316;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    @media(max-width:900px){
+
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:42px;
+      }
+
+      p{
+        font-size:18px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
-  <a href="/">
-    ← Voltar para o site
-  </a>
+  <div class="container">
 
-  <h1>
-    Impressão 3D em Juiz de Fora
-  </h1>
+    <a href="/">
+      ← Voltar para o site
+    </a>
 
-  <p>
-    A Projeta3D Engenharia desenvolve soluções em impressão 3D,
-    prototipagem rápida, peças técnicas e engenharia mecânica
-    para empresas e projetos personalizados.
-  </p>
+    <div class="hero">
 
-  <h2>
-    Serviços de Impressão 3D
-  </h2>
+      <div>
 
-  <p>
-    Trabalhamos com fabricação de peças mecânicas,
-    protótipos funcionais, desenvolvimento de produtos,
-    engenharia reversa e modelagem para impressão 3D.
-  </p>
+        <h1>
+          Modelagem CAD Profissional
+        </h1>
 
-  <h2>
-    Aplicações
-  </h2>
+        <p>
+          Desenvolvemos projetos mecânicos,
+          modelagem 3D e soluções técnicas
+          utilizando SolidWorks e ferramentas CAD profissionais.
+        </p>
 
-  <p>
-    Produção de protótipos, testes funcionais,
-    peças sob medida, dispositivos mecânicos,
-    desenvolvimento industrial e projetos técnicos.
-  </p>
+      </div>
+
+      <img src="/turbina-cad.jpg">
+
+    </div>
+
+    <h2>
+      Desenvolvimento de Projetos
+    </h2>
+
+    <p>
+      Criamos peças, conjuntos mecânicos,
+      dispositivos técnicos e modelos prontos
+      para fabricação e impressão 3D.
+    </p>
+
+    <div class="gallery">
+
+      <img src="/encaixe-cad.jpg">
+
+      <img src="/turbina-original.jpg">
+
+      <img src="/preview.png">
+
+    </div>
+
+    <h2>
+      Engenharia Reversa
+    </h2>
+
+    <div class="box">
+
+      <p>
+        Recriamos peças e componentes
+        a partir da peça física original,
+        garantindo compatibilidade e precisão dimensional.
+      </p>
+
+    </div>
+
+    <h2>
+      SolidWorks e Engenharia Mecânica
+    </h2>
+
+    <p>
+      Utilizamos metodologias profissionais
+      de engenharia para transformar ideias
+      em projetos técnicos funcionais.
+    </p>
+
+  </div>
 
 </body>
 
