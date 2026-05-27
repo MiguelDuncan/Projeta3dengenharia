@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://projeta3djf.com/sitemap.xml
+Sitemap: https://www.projeta3djf.com/sitemap.xml
