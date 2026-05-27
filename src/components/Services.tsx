@@ -60,20 +60,29 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-0.5 bg-[#f97316]" />
-            <span className="text-[#f97316] text-xs font-bold tracking-[0.25em] uppercase">O que fazemos</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-            Soluções Completas em
-            <span className="text-[#f97316] block">Impressão 3D e Engenharia</span>
-          </h2>
-          <p className="text-[#6b7280] text-lg mt-4 max-w-xl">
-            Precisão em cada detalhe. Confiança em cada projeto.
-          </p>
-        </div>
+       <div className="mb-16 text-center">
+  <div className="flex items-center justify-center gap-3 mb-4">
+    <div className="w-8 h-0.5 bg-[#f97316]" />
 
+    <span className="text-[#f97316] text-xs font-bold tracking-[0.25em] uppercase">
+      Engenharia Mecânica • Modelagem CAD • Impressão 3D
+    </span>
+  </div>
+
+  <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+    Nossos Serviços de
+    <span className="text-[#f97316] block">
+      Engenharia e Prototipagem
+    </span>
+  </h2>
+
+  <p className="text-[#b6b280] text-lg mt-6 max-w-3xl mx-auto">
+    Desenvolvemos soluções em engenharia mecânica,
+    modelagem CAD, impressão 3D e prototipagem
+    para empresas, indústrias e projetos técnicos
+    em Juiz de Fora e todo o Brasil.
+  </p>
+</div>
         {/* Cards grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => {
