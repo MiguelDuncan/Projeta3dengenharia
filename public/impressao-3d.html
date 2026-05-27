@@ -1,192 +1,179 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
-
-  <title>
-    Impressão 3D em Juiz de Fora | Projeta3D Engenharia
-  </title>
+  <title>Impressão 3D em Juiz de Fora | Projeta3D</title>
 
   <meta
     name="description"
-    content="Serviço profissional de impressão 3D em Juiz de Fora para prototipagem, peças mecânicas, engenharia reversa e desenvolvimento de produtos."
-  />
-
-  <meta
-    name="keywords"
-    content="impressão 3D Juiz de Fora, prototipagem, engenharia mecânica, peças 3D"
+    content="Serviço profissional de impressão 3D em Juiz de Fora. Produção de peças técnicas, protótipos funcionais e componentes mecânicos."
   />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
 
-    body{
+    *{
       margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
       background:#070b14;
       color:white;
-      font-family:Arial;
-      line-height:1.7;
+      line-height:1.6;
+    }
+
+    .grid-bg{
+      background-image:
+        linear-gradient(rgba(74,144,217,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74,144,217,0.05) 1px, transparent 1px);
+      background-size:48px 48px;
     }
 
     .container{
+      width:90%;
       max-width:1200px;
       margin:auto;
-      padding:60px 24px;
-    }
-
-    h1{
-      font-size:64px;
-      line-height:1.1;
-      margin-bottom:24px;
-    }
-
-    h2{
-      margin-top:70px;
-      color:#f97316;
-      font-size:38px;
-    }
-
-    p{
-      color:#d1d5db;
-      font-size:20px;
     }
 
     .hero{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-      align-items:center;
+      padding:120px 0 80px;
+      text-align:center;
     }
 
-    .hero img{
-      width:100%;
-      border-radius:18px;
+    .hero h1{
+      font-size:56px;
+      margin-bottom:20px;
     }
 
-    .gallery{
+    .orange{
+      color:#f97316;
+    }
+
+    .hero p{
+      max-width:800px;
+      margin:auto;
+      color:#b6b280;
+      font-size:20px;
+    }
+
+    .section{
+      padding:80px 0;
+    }
+
+    .cards{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:24px;
-      margin-top:40px;
+      margin-top:50px;
     }
 
-    .gallery img{
-      width:100%;
-      border-radius:16px;
-    }
-
-    .box{
+    .card{
       background:#0d1426;
       border:1px solid #1a2540;
       padding:30px;
-      border-radius:16px;
-      margin-top:24px;
+      transition:0.3s;
     }
 
-    a{
-      color:#f97316;
+    .card:hover{
+      border-color:#f97316;
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:white;
+    }
+
+    .card p{
+      color:#9ca3af;
+    }
+
+    .image{
+      width:100%;
+      border:1px solid #1a2540;
+      margin-top:40px;
+    }
+
+    .cta{
+      background:#f97316;
+      color:white;
+      display:inline-block;
+      padding:16px 32px;
+      margin-top:40px;
       text-decoration:none;
       font-weight:bold;
     }
 
-    @media(max-width:900px){
-
-      .hero{
-        grid-template-columns:1fr;
-      }
-
-      h1{
-        font-size:42px;
-      }
-
-      p{
-        font-size:18px;
-      }
-
+    .cta:hover{
+      background:#ea6910;
     }
 
   </style>
 </head>
 
-<body>
+<body class="grid-bg">
 
-  <div class="container">
+  <section class="hero">
+    <div class="container">
 
-    <a href="/">
-      ← Voltar para o site
-    </a>
+      <h1>
+        Impressão <span class="orange">3D Profissional</span>
+      </h1>
 
-    <div class="hero">
+      <p>
+        Produção de peças técnicas, protótipos funcionais e componentes
+        mecânicos com alta precisão dimensional e acabamento profissional.
+      </p>
 
-      <div>
+      <a href="/" class="cta">
+        Voltar ao Site
+      </a>
 
-        <h1>
-          Impressão 3D Profissional
-        </h1>
+    </div>
+  </section>
 
-        <p>
-          Desenvolvemos peças técnicas, protótipos funcionais
-          e soluções em fabricação aditiva para engenharia,
-          indústria e desenvolvimento de produtos.
-        </p>
+  <section class="section">
+    <div class="container">
+
+      <img
+        src="/turbina-impressa.jpg"
+        class="image"
+      />
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Alta Precisão</h3>
+          <p>
+            Produção com excelente definição e tolerâncias adequadas
+            para aplicações técnicas.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Peças Funcionais</h3>
+          <p>
+            Fabricação de componentes resistentes para testes,
+            validações e uso real.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Prototipagem Rápida</h3>
+          <p>
+            Transformamos ideias em peças físicas rapidamente
+            para acelerar seu projeto.
+          </p>
+        </div>
 
       </div>
 
-      <img src="/turbina-impressa.jpg">
-
     </div>
-
-    <h2>
-      Aplicações da Impressão 3D
-    </h2>
-
-    <p>
-      Utilizamos impressão 3D para prototipagem rápida,
-      validação de projetos, peças mecânicas,
-      engenharia reversa e desenvolvimento industrial.
-    </p>
-
-    <div class="gallery">
-
-      <img src="/encaixe-impress.jpg">
-
-      <img src="/turbina-original.jpg">
-
-      <img src="/botao-impresso.jpg">
-
-    </div>
-
-    <h2>
-      Materiais Utilizados
-    </h2>
-
-    <div class="box">
-
-      <p>
-        Trabalhamos com materiais técnicos como:
-      </p>
-
-      <p>
-        ABS • PETG • ASA • TPU • Nylon • PA-CF • PC
-      </p>
-
-    </div>
-
-    <h2>
-      Engenharia Aplicada
-    </h2>
-
-    <p>
-      Nosso processo combina engenharia mecânica,
-      modelagem CAD e impressão 3D para garantir
-      peças funcionais e dimensionalmente precisas.
-    </p>
-
-  </div>
+  </section>
 
 </body>
-
 </html>
