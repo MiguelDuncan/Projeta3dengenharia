@@ -11,83 +11,181 @@
 
   <meta
     name="description"
-    content="Serviço profissional de impressão 3D em Juiz de Fora. Protótipos, peças mecânicas, engenharia e desenvolvimento de produtos."
+    content="Serviço profissional de impressão 3D em Juiz de Fora para prototipagem, peças mecânicas, engenharia reversa e desenvolvimento de produtos."
   />
 
   <meta
     name="keywords"
-    content="impressão 3D Juiz de Fora, prototipagem, peças 3D, engenharia mecânica"
+    content="impressão 3D Juiz de Fora, prototipagem, engenharia mecânica, peças 3D"
   />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    body {
-      background: #070b14;
-      color: white;
-      font-family: Arial;
-      padding: 60px 24px;
-      line-height: 1.7;
-      max-width: 1100px;
-      margin: auto;
+
+    body{
+      margin:0;
+      background:#070b14;
+      color:white;
+      font-family:Arial;
+      line-height:1.7;
     }
 
-    h1 {
-      font-size: 64px;
-      margin-bottom: 20px;
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:60px 24px;
     }
 
-    h2 {
-      margin-top: 60px;
-      color: #f97316;
+    h1{
+      font-size:64px;
+      line-height:1.1;
+      margin-bottom:24px;
     }
 
-    p {
-      color: #d1d5db;
-      font-size: 20px;
+    h2{
+      margin-top:70px;
+      color:#f97316;
+      font-size:38px;
     }
 
-    a {
-      color: #f97316;
+    p{
+      color:#d1d5db;
+      font-size:20px;
     }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .hero img{
+      width:100%;
+      border-radius:18px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+      margin-top:40px;
+    }
+
+    .gallery img{
+      width:100%;
+      border-radius:16px;
+    }
+
+    .box{
+      background:#0d1426;
+      border:1px solid #1a2540;
+      padding:30px;
+      border-radius:16px;
+      margin-top:24px;
+    }
+
+    a{
+      color:#f97316;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    @media(max-width:900px){
+
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:42px;
+      }
+
+      p{
+        font-size:18px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
-  <a href="/">
-    ← Voltar para o site
-  </a>
+  <div class="container">
 
-  <h1>
-    Impressão 3D em Juiz de Fora
-  </h1>
+    <a href="/">
+      ← Voltar para o site
+    </a>
 
-  <p>
-    A Projeta3D Engenharia desenvolve soluções em impressão 3D,
-    prototipagem rápida, peças técnicas e engenharia mecânica
-    para empresas e projetos personalizados.
-  </p>
+    <div class="hero">
 
-  <h2>
-    Serviços de Impressão 3D
-  </h2>
+      <div>
 
-  <p>
-    Trabalhamos com fabricação de peças mecânicas,
-    protótipos funcionais, desenvolvimento de produtos,
-    engenharia reversa e modelagem para impressão 3D.
-  </p>
+        <h1>
+          Impressão 3D Profissional
+        </h1>
 
-  <h2>
-    Aplicações
-  </h2>
+        <p>
+          Desenvolvemos peças técnicas, protótipos funcionais
+          e soluções em fabricação aditiva para engenharia,
+          indústria e desenvolvimento de produtos.
+        </p>
 
-  <p>
-    Produção de protótipos, testes funcionais,
-    peças sob medida, dispositivos mecânicos,
-    desenvolvimento industrial e projetos técnicos.
-  </p>
+      </div>
+
+      <img src="/turbina-impressa.jpg">
+
+    </div>
+
+    <h2>
+      Aplicações da Impressão 3D
+    </h2>
+
+    <p>
+      Utilizamos impressão 3D para prototipagem rápida,
+      validação de projetos, peças mecânicas,
+      engenharia reversa e desenvolvimento industrial.
+    </p>
+
+    <div class="gallery">
+
+      <img src="/encaixe-impress.jpg">
+
+      <img src="/turbina-original.jpg">
+
+      <img src="/botao-impresso.jpg">
+
+    </div>
+
+    <h2>
+      Materiais Utilizados
+    </h2>
+
+    <div class="box">
+
+      <p>
+        Trabalhamos com materiais técnicos como:
+      </p>
+
+      <p>
+        ABS • PETG • ASA • TPU • Nylon • PA-CF • PC
+      </p>
+
+    </div>
+
+    <h2>
+      Engenharia Aplicada
+    </h2>
+
+    <p>
+      Nosso processo combina engenharia mecânica,
+      modelagem CAD e impressão 3D para garantir
+      peças funcionais e dimensionalmente precisas.
+    </p>
+
+  </div>
 
 </body>
 
