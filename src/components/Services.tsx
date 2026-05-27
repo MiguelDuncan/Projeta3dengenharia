@@ -5,7 +5,7 @@ const services = [
     icon: Box,
     title: 'Modelagem 3D & CAD',
     description:
-      'Projetos mecânicos e modelagem técnica para fabricação, prototipagem e engenharia.',
+      'Desenvolvimento técnico de peças e componentes com máxima precisão dimensional. Projetos funcionais prontos para fabricação.',
     highlights: ['Projetos CAD', 'SolidWorks', 'Engenharia'],
   },
   {
@@ -51,7 +51,8 @@ export default function Services() {
       id="servicos"
       className="bg-[#070b14] py-24 relative overflow-hidden clear-both block"
     >
-      {/* Subtle grid */}
+
+      {/* Grid background */}
       <div
         className="absolute inset-0 opacity-[0.025]"
         style={{
@@ -67,18 +68,23 @@ export default function Services() {
         <div className="mb-16 text-center">
 
           <div className="flex items-center justify-center gap-3 mb-4">
+
             <div className="w-8 h-0.5 bg-[#f97316]" />
 
             <span className="text-[#f97316] text-xs font-bold tracking-[0.25em] uppercase">
               Engenharia Mecânica • Modelagem CAD • Impressão 3D
             </span>
+
           </div>
 
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+
             Nossos Serviços de
+
             <span className="text-[#f97316] block">
               Engenharia e Prototipagem
             </span>
+
           </h2>
 
           <p className="text-[#b6b280] text-lg mt-6 max-w-3xl mx-auto">
@@ -90,25 +96,26 @@ export default function Services() {
 
         </div>
 
-        {/* Cards grid */}
+        {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {services.map((s, i) => {
 
             const Icon = s.icon;
 
-            return (
+            const cardContent = (
 
               <div
-                key={i}
-                className="group relative bg-[#0d1426] border border-[#1a2540] hover:border-[#f97316]/50 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(249,115,22,0.12)]"
+                className="group relative bg-[#0d1426] border border-[#1a2540] hover:border-[#f97316]/50 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(249,115,22,0.12)] h-full cursor-pointer"
               >
 
                 {/* Corner accent */}
                 <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#f97316]/30 group-hover:border-[#f97316] transition-colors duration-300" />
 
                 <div className="w-12 h-12 bg-[#f97316]/10 border border-[#f97316]/20 flex items-center justify-center mb-5 group-hover:bg-[#f97316]/20 transition-colors duration-300">
+
                   <Icon size={22} className="text-[#f97316]" />
+
                 </div>
 
                 <h3 className="text-white font-bold text-lg mb-3">
@@ -142,46 +149,89 @@ export default function Services() {
 
             );
 
+            // CARD IMPRESSÃO 3D
+            if (s.title === 'Impressão 3D') {
+
+              return (
+
+                <a
+                  key={i}
+                  href="/impressao-3d.html"
+                  className="block"
+                >
+
+                  {cardContent}
+
+                </a>
+
+              );
+
+            }
+
+            // CARD MODELAGEM CAD
+            if (s.title === 'Modelagem 3D & CAD') {
+
+              return (
+
+                <a
+                  key={i}
+                  href="/modelagem-cad.html"
+                  className="block"
+                >
+
+                  {cardContent}
+
+                </a>
+
+              );
+
+            }
+
+            // OUTROS CARDS
+            return (
+
+              <div key={i}>
+
+                {cardContent}
+
+              </div>
+
+            );
+
           })}
 
         </div>
 
-        {/* Bottom CTA strip */}
-        <div className="mt-16 border border-[#f97316]/20 bg-[#f97316]/5 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative z-50">
+        {/* Bottom CTA */}
+        <div className="mt-16 border border-[#f97316]/20 bg-[#f97316]/5 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
 
-          <div className="flex flex-col gap-4">
+          <div>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex gap-4 mb-3 flex-wrap">
 
               <a
                 href="/impressao-3d.html"
-                target="_self"
-                className="cursor-pointer relative z-50 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-6 py-3 text-sm transition-colors duration-200 inline-flex items-center justify-center"
+                className="bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-5 py-3 text-sm transition-colors duration-200"
               >
                 Página de Impressão 3D
               </a>
 
               <a
                 href="/modelagem-cad.html"
-                target="_self"
-                className="cursor-pointer relative z-50 bg-[#1a2540] hover:bg-[#24304f] text-white font-bold px-6 py-3 text-sm transition-colors duration-200 inline-flex items-center justify-center"
+                className="bg-[#1a2540] hover:bg-[#243252] text-white font-bold px-5 py-3 text-sm transition-colors duration-200"
               >
                 Página de Modelagem CAD
               </a>
 
             </div>
 
-            <div>
+            <p className="text-white font-bold text-lg">
+              Precisão em Cada Detalhe.
+            </p>
 
-              <p className="text-white font-bold text-lg">
-                Precisão em Cada Detalhe.
-              </p>
-
-              <p className="text-[#9ca3af] text-sm">
-                Tem um projeto? Envie uma foto ou ideia — analisamos e desenvolvemos.
-              </p>
-
-            </div>
+            <p className="text-[#9ca3af] text-sm">
+              Tem um projeto? Envie uma foto ou ideia — analisamos e desenvolvemos.
+            </p>
 
           </div>
 
@@ -191,14 +241,17 @@ export default function Services() {
                 .querySelector('#contato')
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
-            className="flex-shrink-0 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-7 py-3 text-sm transition-colors duration-200 whitespace-nowrap relative z-50"
+            className="flex-shrink-0 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-7 py-3 text-sm transition-colors duration-200 whitespace-nowrap"
           >
+
             Solicitar Orçamento
+
           </button>
 
         </div>
 
       </div>
+
     </section>
   );
 }
