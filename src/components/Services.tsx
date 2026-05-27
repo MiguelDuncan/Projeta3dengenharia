@@ -118,6 +118,24 @@ export default function Services() {
         {/* Bottom CTA strip */}
         <div className="mt-16 border border-[#f97316]/20 bg-[#f97316]/5 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
+                    {/* SEO Pages */}
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+
+          <a
+            href="/impressao-3d.html"
+            className="bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-6 py-3 transition-colors duration-200"
+          >
+            Página de Impressão 3D
+          </a>
+
+          <a
+            href="/modelagem-cad.html"
+            className="bg-[#1a2540] hover:bg-[#24304f] text-white font-bold px-6 py-3 transition-colors duration-200"
+          >
+            Página de Modelagem CAD
+          </a>
+
+        </div>
             <p className="text-white font-bold text-lg">Precisão em Cada Detalhe.</p>
             <p className="text-[#9ca3af] text-sm">Tem um projeto? Envie uma foto ou ideia — analisamos e desenvolvemos.</p>
           </div>
