@@ -19,7 +19,7 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial, sans-serif;
+      font-family:Arial,sans-serif;
     }
 
     body{
@@ -62,15 +62,42 @@
       font-size:20px;
     }
 
-    .section{
-      padding:80px 0;
+    .cta{
+      background:#f97316;
+      color:white;
+      display:inline-block;
+      padding:16px 32px;
+      margin-top:40px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+      margin-top:60px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border:1px solid #1a2540;
+      transition:0.3s;
+    }
+
+    .gallery img:hover{
+      transform:translateY(-5px);
+      border-color:#f97316;
     }
 
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:24px;
-      margin-top:50px;
+      margin-top:70px;
+      margin-bottom:80px;
     }
 
     .card{
@@ -93,92 +120,86 @@
       color:#9ca3af;
     }
 
-    .image{
-      width:100%;
-      border:1px solid #1a2540;
-      margin-top:40px;
-    }
-
-    .cta{
-      background:#f97316;
-      color:white;
-      display:inline-block;
-      padding:16px 32px;
-      margin-top:40px;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    .cta:hover{
-      background:#ea6910;
-    }
-
   </style>
 </head>
 
 <body class="grid-bg">
 
-  <section class="hero">
+<section class="hero">
 
-    <div class="container">
+  <div class="container">
 
-      <h1>
-        Modelagem <span class="orange">3D & CAD</span>
-      </h1>
+    <h1>
+      Modelagem <span class="orange">3D & CAD</span>
+    </h1>
 
-      <p>
-        Desenvolvimento técnico de peças, conjuntos mecânicos e
-        projetos funcionais para fabricação, prototipagem e engenharia.
-      </p>
+    <p>
+      Desenvolvimento técnico de peças, conjuntos mecânicos
+      e projetos funcionais para fabricação e engenharia.
+    </p>
 
-      <a href="/" class="cta">
-        Voltar ao Site
-      </a>
+    <a href="/" class="cta">
+      Voltar ao Site
+    </a>
+
+    <div class="gallery">
+
+      <img src="/turbina-cad.jpg">
+
+      <img src="/encaixe-cad.jpg">
+
+      <img src="/encaixe-original.jpg">
 
     </div>
 
-  </section>
+  </div>
 
-  <section class="section">
+</section>
 
-    <div class="container">
+<section>
 
-      <img
-        src="/turbina-cad.jpg"
-        class="image"
-      />
+  <div class="container">
 
-      <div class="cards">
+    <div class="cards">
 
-        <div class="card">
-          <h3>Projetos Mecânicos</h3>
-          <p>
-            Desenvolvimento completo de peças e conjuntos
-            mecânicos com foco funcional.
-          </p>
-        </div>
+      <div class="card">
 
-        <div class="card">
-          <h3>SolidWorks</h3>
-          <p>
-            Modelagem técnica profissional utilizando
-            softwares CAD modernos.
-          </p>
-        </div>
+        <h3>Projetos Mecânicos</h3>
 
-        <div class="card">
-          <h3>Engenharia Reversa</h3>
-          <p>
-            Reconstrução digital de peças a partir
-            do componente físico original.
-          </p>
-        </div>
+        <p>
+          Desenvolvimento técnico completo de peças
+          e conjuntos mecânicos funcionais.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>SolidWorks</h3>
+
+        <p>
+          Modelagem CAD profissional utilizando
+          softwares modernos de engenharia.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Engenharia Reversa</h3>
+
+        <p>
+          Reconstrução digital precisa a partir
+          da peça física original.
+        </p>
 
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 </body>
 </html>
