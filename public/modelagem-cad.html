@@ -1,190 +1,184 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
 <head>
+
   <meta charset="UTF-8" />
 
-  <title>
-    Modelagem CAD e SolidWorks | Projeta3D Engenharia
-  </title>
+  <title>Modelagem CAD e Engenharia | Projeta3D</title>
 
   <meta
     name="description"
-    content="Serviços profissionais de modelagem CAD, SolidWorks, engenharia reversa e projetos mecânicos em Juiz de Fora."
-  />
-
-  <meta
-    name="keywords"
-    content="modelagem CAD, SolidWorks, engenharia mecânica, desenho técnico"
+    content="Serviço profissional de modelagem CAD, engenharia mecânica e desenvolvimento de peças técnicas em Juiz de Fora."
   />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
 
-    body{
+    *{
       margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
       background:#070b14;
       color:white;
-      font-family:Arial;
-      line-height:1.7;
+      line-height:1.6;
+    }
+
+    .grid-bg{
+      background-image:
+        linear-gradient(rgba(74,144,217,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74,144,217,0.05) 1px, transparent 1px);
+      background-size:48px 48px;
     }
 
     .container{
+      width:90%;
       max-width:1200px;
       margin:auto;
-      padding:60px 24px;
-    }
-
-    h1{
-      font-size:64px;
-      line-height:1.1;
-      margin-bottom:24px;
-    }
-
-    h2{
-      margin-top:70px;
-      color:#f97316;
-      font-size:38px;
-    }
-
-    p{
-      color:#d1d5db;
-      font-size:20px;
     }
 
     .hero{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-      align-items:center;
+      padding:120px 0 80px;
+      text-align:center;
     }
 
-    .hero img{
-      width:100%;
-      border-radius:18px;
+    .hero h1{
+      font-size:56px;
+      margin-bottom:20px;
     }
 
-    .gallery{
+    .orange{
+      color:#f97316;
+    }
+
+    .hero p{
+      max-width:800px;
+      margin:auto;
+      color:#b6b280;
+      font-size:20px;
+    }
+
+    .section{
+      padding:80px 0;
+    }
+
+    .cards{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:24px;
-      margin-top:40px;
+      margin-top:50px;
     }
 
-    .gallery img{
-      width:100%;
-      border-radius:16px;
-    }
-
-    .box{
+    .card{
       background:#0d1426;
       border:1px solid #1a2540;
       padding:30px;
-      border-radius:16px;
-      margin-top:24px;
+      transition:0.3s;
     }
 
-    a{
-      color:#f97316;
+    .card:hover{
+      border-color:#f97316;
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+    }
+
+    .card p{
+      color:#9ca3af;
+    }
+
+    .image{
+      width:100%;
+      border:1px solid #1a2540;
+      margin-top:40px;
+    }
+
+    .cta{
+      background:#f97316;
+      color:white;
+      display:inline-block;
+      padding:16px 32px;
+      margin-top:40px;
       text-decoration:none;
       font-weight:bold;
     }
 
-    @media(max-width:900px){
-
-      .hero{
-        grid-template-columns:1fr;
-      }
-
-      h1{
-        font-size:42px;
-      }
-
-      p{
-        font-size:18px;
-      }
-
+    .cta:hover{
+      background:#ea6910;
     }
 
   </style>
 </head>
 
-<body>
+<body class="grid-bg">
 
-  <div class="container">
+  <section class="hero">
 
-    <a href="/">
-      ← Voltar para o site
-    </a>
+    <div class="container">
 
-    <div class="hero">
+      <h1>
+        Modelagem <span class="orange">3D & CAD</span>
+      </h1>
 
-      <div>
+      <p>
+        Desenvolvimento técnico de peças, conjuntos mecânicos e
+        projetos funcionais para fabricação, prototipagem e engenharia.
+      </p>
 
-        <h1>
-          Modelagem CAD Profissional
-        </h1>
+      <a href="/" class="cta">
+        Voltar ao Site
+      </a>
 
-        <p>
-          Desenvolvemos projetos mecânicos,
-          modelagem 3D e soluções técnicas
-          utilizando SolidWorks e ferramentas CAD profissionais.
-        </p>
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <div class="container">
+
+      <img
+        src="/turbina-cad.jpg"
+        class="image"
+      />
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Projetos Mecânicos</h3>
+          <p>
+            Desenvolvimento completo de peças e conjuntos
+            mecânicos com foco funcional.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>SolidWorks</h3>
+          <p>
+            Modelagem técnica profissional utilizando
+            softwares CAD modernos.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Engenharia Reversa</h3>
+          <p>
+            Reconstrução digital de peças a partir
+            do componente físico original.
+          </p>
+        </div>
 
       </div>
 
-      <img src="/turbina-cad.jpg">
-
     </div>
 
-    <h2>
-      Desenvolvimento de Projetos
-    </h2>
-
-    <p>
-      Criamos peças, conjuntos mecânicos,
-      dispositivos técnicos e modelos prontos
-      para fabricação e impressão 3D.
-    </p>
-
-    <div class="gallery">
-
-      <img src="/encaixe-cad.jpg">
-
-      <img src="/turbina-original.jpg">
-
-      <img src="/preview.png">
-
-    </div>
-
-    <h2>
-      Engenharia Reversa
-    </h2>
-
-    <div class="box">
-
-      <p>
-        Recriamos peças e componentes
-        a partir da peça física original,
-        garantindo compatibilidade e precisão dimensional.
-      </p>
-
-    </div>
-
-    <h2>
-      SolidWorks e Engenharia Mecânica
-    </h2>
-
-    <p>
-      Utilizamos metodologias profissionais
-      de engenharia para transformar ideias
-      em projetos técnicos funcionais.
-    </p>
-
-  </div>
+  </section>
 
 </body>
-
 </html>
