@@ -5,43 +5,43 @@ const services = [
     icon: Box,
     title: 'Modelagem 3D & CAD',
     description:
-      'Desenvolvimento técnico de peças e componentes com máxima precisão dimensional. Projetos funcionais prontos para fabricação.',
-    highlights: ['Projetos do zero', 'Engenharia reversa', 'Otimização de geometria'],
+      'Projetos mecânicos e modelagem técnica para fabricação, prototipagem e engenharia.',
+    highlights: ['Projetos CAD', 'SolidWorks', 'Engenharia'],
   },
   {
     icon: Printer,
-    title: 'Impressão 3D Personalizada',
+    title: 'Impressão 3D',
     description:
-      'Fabricação aditiva com materiais de engenharia: ABS, PETG, ASA, Nylon, PA-CF, PC e TPU para aplicações técnicas exigentes.',
-    highlights: ['Múltiplos materiais', 'Alta resolução', 'Peças funcionais'],
+      'Produção de peças funcionais, protótipos e componentes técnicos com impressão 3D.',
+    highlights: ['Alta precisão', 'Peças técnicas', 'Protótipos'],
   },
   {
     icon: Wrench,
-    title: 'Prototipagem de Engenharia',
+    title: 'Prototipagem',
     description:
-      'Do conceito à peça final com engenharia de verdade. Validamos, testamos e refinamos seu projeto antes da produção.',
-    highlights: ['Prótotipos funcionais', 'Validação estrutural', 'Projetos mecânicos'],
+      'Desenvolvimento rápido de protótipos para validação e testes de engenharia.',
+    highlights: ['Testes', 'Validação', 'Projetos'],
   },
   {
     icon: ScanLine,
     title: 'Engenharia Reversa',
     description:
-      'Recriamos peças quebradas ou descontinuadas a partir da peça original ou de medições. Voltamos seu equipamento a funcionar.',
-    highlights: ['Peças descontinuadas', 'Alta fidelidade', 'Otimização de peças'],
+      'Reconstrução digital de peças e componentes a partir da peça original.',
+    highlights: ['Reprodução', 'Digitalização', 'Precisão'],
   },
   {
     icon: Settings,
     title: 'Projetos Mecânicos',
     description:
-      'Soluções completas de engenharia mecânica, desde o desenho técnico até a entrega da peça montada e funcional.',
-    highlights: ['Desenho técnico', 'Simulação', 'Consultoria técnica'],
+      'Soluções completas em engenharia mecânica e desenvolvimento técnico.',
+    highlights: ['Desenho técnico', 'Consultoria', 'Projetos'],
   },
   {
     icon: TrendingUp,
-    title: 'Desenvolvimento de Produto',
+    title: 'Desenvolvimento',
     description:
-      'Transformamos sua ideia em produto com metodologia de engenharia, desde o briefing até o protótipo validado.',
-    highlights: ['Briefing técnico', 'Iteração rápida', 'Produto final'],
+      'Transformamos ideias em produtos funcionais com metodologia de engenharia.',
+    highlights: ['Produto final', 'Iteração', 'Desenvolvimento'],
   },
 ];
 
