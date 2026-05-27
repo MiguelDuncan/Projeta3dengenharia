@@ -47,7 +47,10 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servicos" className="bg-[#070b14] py-24 relative overflow-hidden clear-both block">
+    <section
+      id="servicos"
+      className="bg-[#070b14] py-24 relative overflow-hidden clear-both block"
+    >
       {/* Subtle grid */}
       <div
         className="absolute inset-0 opacity-[0.025]"
@@ -60,33 +63,35 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-       <div className="mb-16 text-center">
-  <div className="flex items-center justify-center gap-3 mb-4">
-    <div className="w-8 h-0.5 bg-[#f97316]" />
+        <div className="mb-16 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-8 h-0.5 bg-[#f97316]" />
 
-    <span className="text-[#f97316] text-xs font-bold tracking-[0.25em] uppercase">
-      Engenharia Mecânica • Modelagem CAD • Impressão 3D
-    </span>
-  </div>
+            <span className="text-[#f97316] text-xs font-bold tracking-[0.25em] uppercase">
+              Engenharia Mecânica • Modelagem CAD • Impressão 3D
+            </span>
+          </div>
 
-  <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-    Nossos Serviços de
-    <span className="text-[#f97316] block">
-      Engenharia e Prototipagem
-    </span>
-  </h2>
+          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+            Nossos Serviços de
+            <span className="text-[#f97316] block">
+              Engenharia e Prototipagem
+            </span>
+          </h2>
 
-  <p className="text-[#b6b280] text-lg mt-6 max-w-3xl mx-auto">
-    Desenvolvemos soluções em engenharia mecânica,
-    modelagem CAD, impressão 3D e prototipagem
-    para empresas, indústrias e projetos técnicos
-    em Juiz de Fora e todo o Brasil.
-  </p>
-</div>
+          <p className="text-[#b6b280] text-lg mt-6 max-w-3xl mx-auto">
+            Desenvolvemos soluções em engenharia mecânica,
+            modelagem CAD, impressão 3D e prototipagem
+            para empresas, indústrias e projetos técnicos
+            em Juiz de Fora e todo o Brasil.
+          </p>
+        </div>
+
         {/* Cards grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => {
             const Icon = s.icon;
+
             return (
               <div
                 key={i}
@@ -99,12 +104,20 @@ export default function Services() {
                   <Icon size={22} className="text-[#f97316]" />
                 </div>
 
-                <h3 className="text-white font-bold text-lg mb-3">{s.title}</h3>
-                <p className="text-[#6b7280] text-sm leading-relaxed mb-5">{s.description}</p>
+                <h3 className="text-white font-bold text-lg mb-3">
+                  {s.title}
+                </h3>
+
+                <p className="text-[#6b7280] text-sm leading-relaxed mb-5">
+                  {s.description}
+                </p>
 
                 <ul className="flex flex-col gap-2">
                   {s.highlights.map((h) => (
-                    <li key={h} className="flex items-center gap-2 text-[#9ca3af] text-xs">
+                    <li
+                      key={h}
+                      className="flex items-center gap-2 text-[#9ca3af] text-xs"
+                    >
                       <span className="w-1.5 h-1.5 bg-[#f97316] rounded-full flex-shrink-0" />
                       {h}
                     </li>
@@ -117,34 +130,50 @@ export default function Services() {
 
         {/* Bottom CTA strip */}
         <div className="mt-16 border border-[#f97316]/20 bg-[#f97316]/5 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div>
-                    {/* SEO Pages */}
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
 
-          <a
-            href="/impressao-3d.html"
-            className="bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-6 py-3 transition-colors duration-200"
-          >
-            Página de Impressão 3D
-          </a>
+          <div className="flex flex-col gap-4">
 
-          <a
-            href="/modelagem-cad.html"
-            className="bg-[#1a2540] hover:bg-[#24304f] text-white font-bold px-6 py-3 transition-colors duration-200"
-          >
-            Página de Modelagem CAD
-          </a>
+            <div className="flex flex-wrap gap-4">
 
-        </div>
-            <p className="text-white font-bold text-lg">Precisão em Cada Detalhe.</p>
-            <p className="text-[#9ca3af] text-sm">Tem um projeto? Envie uma foto ou ideia — analisamos e desenvolvemos.</p>
+              <a
+                href="/impressao-3d.html"
+                className="bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-6 py-3 text-sm transition-colors duration-200"
+              >
+                Página de Impressão 3D
+              </a>
+
+              <a
+                href="/modelagem-cad.html"
+                className="bg-[#1a2540] hover:bg-[#24304f] text-white font-bold px-6 py-3 text-sm transition-colors duration-200"
+              >
+                Página de Modelagem CAD
+              </a>
+
+            </div>
+
+            <div>
+              <p className="text-white font-bold text-lg">
+                Precisão em Cada Detalhe.
+              </p>
+
+              <p className="text-[#9ca3af] text-sm">
+                Tem um projeto? Envie uma foto ou ideia — analisamos e desenvolvemos.
+              </p>
+            </div>
+
           </div>
+
           <button
-            onClick={() => document.querySelector('#contato')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() =>
+              document
+                .querySelector('#contato')
+                ?.scrollIntoView({ behavior: 'smooth' })
+            }
             className="flex-shrink-0 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-7 py-3 text-sm transition-colors duration-200 whitespace-nowrap"
           >
             Solicitar Orçamento
           </button>
+
         </div>
       </div>
     </section>
