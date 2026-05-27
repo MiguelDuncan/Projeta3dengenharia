@@ -62,8 +62,10 @@ export default function Services() {
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+
         {/* Header */}
         <div className="mb-16 text-center">
+
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-[#f97316]" />
 
@@ -85,18 +87,23 @@ export default function Services() {
             para empresas, indústrias e projetos técnicos
             em Juiz de Fora e todo o Brasil.
           </p>
+
         </div>
 
         {/* Cards grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
           {services.map((s, i) => {
+
             const Icon = s.icon;
 
             return (
+
               <div
                 key={i}
                 className="group relative bg-[#0d1426] border border-[#1a2540] hover:border-[#f97316]/50 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(249,115,22,0.12)]"
               >
+
                 {/* Corner accent */}
                 <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#f97316]/30 group-hover:border-[#f97316] transition-colors duration-300" />
 
@@ -113,83 +120,84 @@ export default function Services() {
                 </p>
 
                 <ul className="flex flex-col gap-2">
+
                   {s.highlights.map((h) => (
+
                     <li
                       key={h}
                       className="flex items-center gap-2 text-[#9ca3af] text-xs"
                     >
+
                       <span className="w-1.5 h-1.5 bg-[#f97316] rounded-full flex-shrink-0" />
+
                       {h}
+
                     </li>
+
                   ))}
+
                 </ul>
+
               </div>
+
             );
+
           })}
+
         </div>
 
         {/* Bottom CTA strip */}
-        {/* Bottom CTA strip */}
-<div className="mt-16 border border-[#f97316]/20 bg-[#f97316]/5 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative z-50">
+        <div className="mt-16 border border-[#f97316]/20 bg-[#f97316]/5 px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 relative z-50">
 
-  <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
 
-    <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4">
 
-      <a
-        href="/impressao-3d.html"
-        target="_self"
-        className="cursor-pointer relative z-50 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-6 py-3 text-sm transition-colors duration-200 inline-flex items-center justify-center"
-      >
-        Página de Impressão 3D
-      </a>
+              <a
+                href="/impressao-3d.html"
+                target="_self"
+                className="cursor-pointer relative z-50 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-6 py-3 text-sm transition-colors duration-200 inline-flex items-center justify-center"
+              >
+                Página de Impressão 3D
+              </a>
 
-      <a
-        href="/modelagem-cad.html"
-        target="_self"
-        className="cursor-pointer relative z-50 bg-[#1a2540] hover:bg-[#24304f] text-white font-bold px-6 py-3 text-sm transition-colors duration-200 inline-flex items-center justify-center"
-      >
-        Página de Modelagem CAD
-      </a>
+              <a
+                href="/modelagem-cad.html"
+                target="_self"
+                className="cursor-pointer relative z-50 bg-[#1a2540] hover:bg-[#24304f] text-white font-bold px-6 py-3 text-sm transition-colors duration-200 inline-flex items-center justify-center"
+              >
+                Página de Modelagem CAD
+              </a>
 
-    </div>
+            </div>
 
-    <div>
-      <p className="text-white font-bold text-lg">
-        Precisão em Cada Detalhe.
-      </p>
+            <div>
 
-      <p className="text-[#9ca3af] text-sm">
-        Tem um projeto? Envie uma foto ou ideia — analisamos e desenvolvemos.
-      </p>
-    </div>
+              <p className="text-white font-bold text-lg">
+                Precisão em Cada Detalhe.
+              </p>
 
-  </div>
+              <p className="text-[#9ca3af] text-sm">
+                Tem um projeto? Envie uma foto ou ideia — analisamos e desenvolvemos.
+              </p>
 
-  <button
-    onClick={() =>
-      document
-        .querySelector('#contato')
-        ?.scrollIntoView({ behavior: 'smooth' })
-    }
-    className="flex-shrink-0 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-7 py-3 text-sm transition-colors duration-200 whitespace-nowrap relative z-50"
-  >
-    Solicitar Orçamento
-  </button>
+            </div>
 
-</div>
+          </div>
+
           <button
             onClick={() =>
               document
                 .querySelector('#contato')
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
-            className="flex-shrink-0 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-7 py-3 text-sm transition-colors duration-200 whitespace-nowrap"
+            className="flex-shrink-0 bg-[#f97316] hover:bg-[#ea6910] text-white font-bold px-7 py-3 text-sm transition-colors duration-200 whitespace-nowrap relative z-50"
           >
             Solicitar Orçamento
           </button>
 
         </div>
+
       </div>
     </section>
   );
