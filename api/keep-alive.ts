@@ -1,6 +1,8 @@
 export default async function handler(req: any, res: any) {
   if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({
+      error: 'Method not allowed'
+    });
   }
 
   const supabaseUrl = process.env.VITE_SUPABASE_URL;
@@ -8,7 +10,9 @@ export default async function handler(req: any, res: any) {
 
   if (!supabaseUrl || !supabaseAnonKey) {
     return res.status(500).json({
-      error: 'Supabase environment variables are missing'
+      error: 'Variáveis do Supabase não encontradas',
+      urlExiste: !!supabaseUrl,
+      chaveExiste: !!supabaseAnonKey
     });
   }
 
@@ -21,14 +25,19 @@ export default async function handler(req: any, res: any) {
       },
     });
 
-    return res.status(response.ok ? 200 : 502).json({
-      ok: response.ok
+    const text = await response.text();
+
+    return res.status(200).json({
+      ok: response.ok,
+      status: response.status,
+      statusText: response.statusText,
+      respostaSupabase: text.substring(0, 500)
     });
-  } catch {
-   return res.status(response.ok ? 200 : 502).json({
-  ok: response.ok,
-  status: response.status,
-  statusText: response.statusText
-});
+
+  } catch (error: any) {
+    return res.status(500).json({
+      error: 'Falha ao conectar com Supabase',
+      mensagem: error?.message || 'Erro desconhecido'
+    });
   }
 }
