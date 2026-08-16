@@ -25,8 +25,10 @@ export default async function handler(req: any, res: any) {
       ok: response.ok
     });
   } catch {
-    return res.status(500).json({
-      error: 'Keep-alive request failed'
-    });
+   return res.status(response.ok ? 200 : 502).json({
+  ok: response.ok,
+  status: response.status,
+  statusText: response.statusText
+});
   }
 }
