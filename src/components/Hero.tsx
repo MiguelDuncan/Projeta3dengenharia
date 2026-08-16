@@ -48,7 +48,7 @@ export default function Hero() {
        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
   Engenharia Mecânica,
   <span className="text-[#f97316] block">
-    Modelagem CAD e Impressão 3D
+    Modelagem Gay e Impressão 3D
   </span>
 
   <span className="text-3xl md:text-4xl lg:text-5xl mt-4 font-bold text-[#d1d5db] block">
