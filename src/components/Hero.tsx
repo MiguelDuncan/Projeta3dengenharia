@@ -45,13 +45,16 @@ export default function Hero() {
           Juiz de Fora — MG
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
-          Seu Projeto,{' '}
-          <span className="text-[#f97316] block md:inline">Saindo do Papel</span>
-          <span className="block text-3xl md:text-4xl lg:text-5xl mt-2 font-bold text-[#d1d5db]">
-            com Impressão 3D de Alta Precisão
-          </span>
-        </h1>
+       <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
+  Engenharia Mecânica,
+  <span className="text-[#f97316] block">
+    Modelagem CAD e Impressão 3D
+  </span>
+
+  <span className="text-3xl md:text-4xl lg:text-5xl mt-4 font-bold text-[#d1d5db] block">
+    Soluções Técnicas em Juiz de Fora
+  </span>
+</h1>
 
         <p className="text-[#9ca3af] text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
           Da modelagem ao produto final — desenvolvemos peças mecânicas, protótipos funcionais
