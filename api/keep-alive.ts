@@ -10,34 +10,31 @@ export default async function handler(req: any, res: any) {
 
   if (!supabaseUrl || !supabaseAnonKey) {
     return res.status(500).json({
-      error: 'Variáveis do Supabase não encontradas',
-      urlExiste: !!supabaseUrl,
-      chaveExiste: !!supabaseAnonKey
+      error: 'Variáveis do Supabase não encontradas'
     });
   }
 
   try {
-    const response = await fetch(`${supabaseUrl}/rest/v1/`, {
-      method: 'GET',
-      headers: {
-        apikey: supabaseAnonKey,
-        Authorization: `Bearer ${supabaseAnonKey}`,
-      },
-    });
+    const response = await fetch(
+      `${supabaseUrl}/rest/v1/orcamentos?select=id&limit=1`,
+      {
+        method: 'GET',
+        headers: {
+          apikey: supabaseAnonKey,
+          Authorization: `Bearer ${supabaseAnonKey}`,
+        },
+      }
+    );
 
-    const text = await response.text();
-
-    return res.status(200).json({
+    return res.status(response.ok ? 200 : 502).json({
       ok: response.ok,
-      status: response.status,
-      statusText: response.statusText,
-      respostaSupabase: text.substring(0, 500)
+      status: response.status
     });
 
   } catch (error: any) {
     return res.status(500).json({
       error: 'Falha ao conectar com Supabase',
-      mensagem: error?.message || 'Erro desconhecido'
+      mensagem: error?.message
     });
   }
 }
