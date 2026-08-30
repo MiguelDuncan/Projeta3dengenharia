@@ -99,7 +99,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://instagram.com/projeta.eng"
+                href="https://www.instagram.com/projeta3djf/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 border border-[#1a2540] hover:border-[#f97316]/50 bg-[#0d1426] px-5 py-4 transition-all duration-200"
@@ -109,7 +109,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-[#6b7280] text-xs mb-0.5">Instagram</p>
-                  <p className="text-white font-semibold text-sm">@projeta.eng</p>
+                  <p className="text-white font-semibold text-sm">@projeta3djf</p>
                 </div>
               </a>
 
