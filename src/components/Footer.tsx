@@ -77,13 +77,13 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com/projeta.eng"
+                  href="https://www.instagram.com/projeta3djf/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-[#6b7280] hover:text-[#f97316] text-sm transition-colors"
                 >
                   <Instagram size={14} className="text-[#f97316]" />
-                  @projeta.eng
+                  @projeta3djf
                 </a>
               </li>
               <li>
