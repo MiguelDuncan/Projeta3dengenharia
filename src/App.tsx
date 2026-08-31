@@ -5,6 +5,19 @@ import {
   useLocation,
   Link,
 } from 'react-router-dom';
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant',
+    });
+  }, [pathname]);
+
+  return null;
+};
 import { useEffect } from 'react';
 
 import Navbar from './components/Navbar';
@@ -1295,6 +1308,8 @@ const EngenhariaReversaPage = () => {
 export default function App() {
   return (
     <Router>
+       <ScrollToTop />
+
       <SEO />
 
       <div className="min-h-screen bg-[#070b14]">
