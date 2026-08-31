@@ -6,6 +6,7 @@ import {
   Link,
 } from 'react-router-dom';
 import { useEffect } from 'react';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -93,6 +94,49 @@ const SectionLabel = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+const ImageCard = ({
+  src,
+  alt,
+  title,
+  description,
+  className = '',
+}: {
+  src: string;
+  alt: string;
+  title?: string;
+  description?: string;
+  className?: string;
+}) => (
+  <div
+    className={`group overflow-hidden bg-[#0d1426] border border-[#1a2540] ${className}`}
+  >
+    <div className="overflow-hidden">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+      />
+    </div>
+
+    {(title || description) && (
+      <div className="p-5">
+        {title && (
+          <h3 className="font-bold text-white mb-2 group-hover:text-[#f97316] transition-colors">
+            {title}
+          </h3>
+        )}
+
+        {description && (
+          <p className="text-gray-400 text-sm leading-relaxed">
+            {description}
+          </p>
+        )}
+      </div>
+    )}
+  </div>
+);
+
 const ServiceCard = ({
   title,
   description,
@@ -109,11 +153,53 @@ const ServiceCard = ({
     <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#f97316] transition-colors">
       {title}
     </h3>
-    <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+
+    <p className="text-gray-400 text-sm leading-relaxed">
+      {description}
+    </p>
+
     <span className="inline-block mt-5 text-[#f97316] text-xs font-bold uppercase tracking-wider">
       Conhecer serviço →
     </span>
   </Link>
+);
+
+const CTA = ({
+  eyebrow,
+  title,
+  description,
+  buttonText = 'Solicitar orçamento',
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+  buttonText?: string;
+}) => (
+  <section className="mt-24 p-8 md:p-12 bg-[#0d1426] border border-[#f97316]/30 relative overflow-hidden">
+    <div className="absolute -right-20 -top-20 w-56 h-56 border border-[#f97316]/10 rounded-full" />
+    <div className="absolute -right-10 -top-10 w-36 h-36 border border-[#f97316]/10 rounded-full" />
+
+    <div className="relative z-10">
+      <span className="text-[#f97316] text-xs font-bold uppercase tracking-[0.2em]">
+        {eyebrow}
+      </span>
+
+      <h2 className="text-3xl md:text-4xl font-black mt-4 mb-4 max-w-3xl">
+        {title}
+      </h2>
+
+      <p className="text-gray-400 max-w-2xl leading-relaxed mb-7">
+        {description}
+      </p>
+
+      <a
+        href="/#contato"
+        className="inline-block px-7 py-3 bg-[#f97316] text-white font-bold text-sm hover:bg-[#ea580c] transition-colors"
+      >
+        {buttonText}
+      </a>
+    </div>
+  </section>
 );
 
 // Página Principal
@@ -130,7 +216,10 @@ const Home = () => {
   );
 };
 
-// Página: Modelagem 3D & CAD
+// ============================================================
+// MODELAGEM 3D & CAD
+// ============================================================
+
 const ModelagemCADPage = () => {
   return (
     <div className="bg-[#070b14] text-white min-h-screen pt-28 pb-24">
@@ -176,12 +265,52 @@ const ModelagemCADPage = () => {
           </div>
         </section>
 
-        <section className="mt-20">
+        {/* DESTAQUE VISUAL */}
+        <section className="mt-20 grid lg:grid-cols-[1.3fr_0.7fr] gap-5">
+          <ImageCard
+            src="/turbina-cad.jpg"
+            alt="Modelo 3D CAD de uma turbina desenvolvido pela Projeta3D Engenharia"
+            title="Do conceito ao modelo digital"
+            description="Modelagem tridimensional aplicada ao desenvolvimento de componentes e projetos mecânicos."
+            className="[&>div:first-child]:h-[380px] md:[&>div:first-child]:h-[480px]"
+          />
+
+          <div className="grid gap-5">
+            <ImageCard
+              src="/encaixe-cad.jpg"
+              alt="Detalhe de encaixe em modelo CAD desenvolvido pela Projeta3D Engenharia"
+              title="Detalhamento e encaixes"
+              description="Geometrias pensadas para montagem e fabricação."
+              className="[&>div:first-child]:h-[220px]"
+            />
+
+            <div className="p-7 bg-[#0d1426] border border-[#1a2540] flex flex-col justify-center">
+              <span className="text-[#f97316] text-3xl font-black mb-3">
+                CAD
+              </span>
+
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Um modelo 3D bem construído pode ser utilizado como base para
+                prototipagem, impressão 3D, fabricação e desenvolvimento de novos
+                produtos.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* O QUE DESENVOLVEMOS */}
+        <section className="mt-24">
           <SectionLabel>O que desenvolvemos</SectionLabel>
 
-          <h2 className="text-3xl md:text-4xl font-black mb-10">
+          <h2 className="text-3xl md:text-4xl font-black mb-4">
             Modelagem pensada para a aplicação real
           </h2>
+
+          <p className="text-gray-400 max-w-3xl leading-relaxed mb-10">
+            O objetivo não é apenas criar uma representação visual da peça.
+            Desenvolvemos modelos que façam sentido para a etapa seguinte do
+            projeto, seja ela fabricação, prototipagem, simulação ou impressão 3D.
+          </p>
 
           <div className="grid md:grid-cols-3 gap-5">
             {[
@@ -215,7 +344,11 @@ const ModelagemCADPage = () => {
                 className="p-6 bg-[#0d1426] border border-[#1a2540] hover:border-[#f97316]/40 transition-colors"
               >
                 <div className="w-2 h-2 bg-[#f97316] mb-5" />
-                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+
+                <h3 className="text-lg font-bold mb-3">
+                  {item.title}
+                </h3>
+
                 <p className="text-gray-400 text-sm leading-relaxed">
                   {item.text}
                 </p>
@@ -224,6 +357,50 @@ const ModelagemCADPage = () => {
           </div>
         </section>
 
+        {/* PROCESSO VISUAL */}
+        <section className="mt-24">
+          <SectionLabel>Desenvolvimento</SectionLabel>
+
+          <h2 className="text-3xl md:text-4xl font-black mb-10">
+            Do desenho à geometria tridimensional
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            <div>
+              <ImageCard
+                src="/encaixe-cad.jpg"
+                alt="Detalhamento de peça mecânica em CAD"
+                title="01 — Construção"
+                description="A geometria é construída a partir das informações disponíveis para o projeto."
+              />
+            </div>
+
+            <div className="hidden md:flex items-center justify-center">
+              <div className="text-[#f97316] text-4xl font-light">
+                →
+              </div>
+            </div>
+
+            <div className="md:-ml-20">
+              <div className="h-full p-7 bg-[#0d1426] border border-[#1a2540] flex flex-col justify-center">
+                <span className="text-[#f97316] text-xs font-bold tracking-[0.2em] uppercase">
+                  02 — Validação
+                </span>
+
+                <h3 className="text-2xl font-black mt-4 mb-4">
+                  Dimensões e encaixes
+                </h3>
+
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  O modelo pode ser analisado visualmente e dimensionalmente antes
+                  de seguir para a fabricação.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FERRAMENTAS */}
         <section className="mt-24 grid lg:grid-cols-2 gap-12 items-start">
           <div>
             <SectionLabel>Ferramentas</SectionLabel>
@@ -292,6 +469,7 @@ const ModelagemCADPage = () => {
           </div>
         </section>
 
+        {/* PROCESSO */}
         <section className="mt-24">
           <SectionLabel>Processo</SectionLabel>
 
@@ -301,10 +479,26 @@ const ModelagemCADPage = () => {
 
           <div className="grid md:grid-cols-4 gap-4">
             {[
-              ['01', 'Briefing', 'Entendemos a necessidade, aplicação e requisitos da peça ou projeto.'],
-              ['02', 'Modelagem', 'Construímos a geometria 3D considerando as medidas e especificações fornecidas.'],
-              ['03', 'Validação', 'Revisamos dimensões, encaixes e características importantes para a aplicação.'],
-              ['04', 'Entrega', 'Entregamos os arquivos adequados ao objetivo definido para o projeto.'],
+              [
+                '01',
+                'Briefing',
+                'Entendemos a necessidade, aplicação e requisitos da peça ou projeto.',
+              ],
+              [
+                '02',
+                'Modelagem',
+                'Construímos a geometria 3D considerando as medidas e especificações fornecidas.',
+              ],
+              [
+                '03',
+                'Validação',
+                'Revisamos dimensões, encaixes e características importantes para a aplicação.',
+              ],
+              [
+                '04',
+                'Entrega',
+                'Entregamos os arquivos adequados ao objetivo definido para o projeto.',
+              ],
             ].map(([number, title, text]) => (
               <div
                 key={number}
@@ -313,7 +507,11 @@ const ModelagemCADPage = () => {
                 <span className="text-[#f97316] text-sm font-black">
                   {number}
                 </span>
-                <h3 className="font-bold text-lg mt-4 mb-3">{title}</h3>
+
+                <h3 className="font-bold text-lg mt-4 mb-3">
+                  {title}
+                </h3>
+
                 <p className="text-gray-400 text-sm leading-relaxed">
                   {text}
                 </p>
@@ -322,6 +520,7 @@ const ModelagemCADPage = () => {
           </div>
         </section>
 
+        {/* SERVIÇOS RELACIONADOS */}
         <section className="mt-24">
           <SectionLabel>Outros serviços</SectionLabel>
 
@@ -340,34 +539,21 @@ const ModelagemCADPage = () => {
           </div>
         </section>
 
-        <section className="mt-20 p-8 md:p-12 bg-[#0d1426] border border-[#f97316]/30">
-          <span className="text-[#f97316] text-xs font-bold uppercase tracking-[0.2em]">
-            Precisa de um projeto?
-          </span>
-
-          <h2 className="text-3xl font-black mt-4 mb-4">
-            Transforme sua ideia em um modelo 3D
-          </h2>
-
-          <p className="text-gray-400 max-w-2xl leading-relaxed mb-7">
-            Envie suas medidas, desenhos, imagens ou explique o que você precisa.
-            Avaliamos a melhor forma de desenvolver o projeto e preparar o modelo
-            para a aplicação desejada.
-          </p>
-
-          <a
-            href="/#contato"
-            className="inline-block px-7 py-3 bg-[#f97316] font-bold text-sm hover:bg-[#ea580c] transition-colors"
-          >
-            Falar com a Projeta3D
-          </a>
-        </section>
+        <CTA
+          eyebrow="Precisa de um projeto?"
+          title="Transforme sua ideia em um modelo 3D"
+          description="Envie suas medidas, desenhos, imagens ou explique o que você precisa. Avaliamos a melhor forma de desenvolver o projeto e preparar o modelo para a aplicação desejada."
+          buttonText="Falar com a Projeta3D"
+        />
       </div>
     </div>
   );
 };
 
-// Página: Impressão 3D
+// ============================================================
+// IMPRESSÃO 3D
+// ============================================================
+
 const Impressao3DPage = () => {
   return (
     <div className="bg-[#070b14] text-white min-h-screen pt-28 pb-24">
@@ -411,7 +597,37 @@ const Impressao3DPage = () => {
           </div>
         </section>
 
-        <section className="mt-20">
+        {/* DESTAQUE DE IMPRESSÃO */}
+        <section className="mt-20 grid lg:grid-cols-[1.4fr_0.6fr] gap-5">
+          <ImageCard
+            src="/turbina-impressa.jpg"
+            alt="Turbina fabricada por impressão 3D pela Projeta3D Engenharia"
+            title="Do modelo digital para a peça física"
+            description="Exemplo de componente produzido por manufatura aditiva."
+            className="[&>div:first-child]:h-[400px] md:[&>div:first-child]:h-[500px]"
+          />
+
+          <div className="grid gap-5">
+            <ImageCard
+              src="/botao-impresso.jpg"
+              alt="Botão produzido por impressão 3D"
+              title="Peças personalizadas"
+              description="Componentes desenvolvidos sob demanda."
+              className="[&>div:first-child]:h-[210px]"
+            />
+
+            <ImageCard
+              src="/fechar-impressso.jpg"
+              alt="Detalhe de peça produzida por impressão 3D"
+              title="Detalhamento"
+              description="Geometrias e componentes produzidos por manufatura aditiva."
+              className="[&>div:first-child]:h-[210px]"
+            />
+          </div>
+        </section>
+
+        {/* MATERIAIS */}
+        <section className="mt-24">
           <SectionLabel>Materiais</SectionLabel>
 
           <h2 className="text-3xl md:text-4xl font-black mb-4">
@@ -424,7 +640,7 @@ const Impressao3DPage = () => {
             deve ser escolhido de acordo com a função real da peça.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               {
                 title: 'ABS',
@@ -454,6 +670,7 @@ const Impressao3DPage = () => {
                 <h3 className="text-xl font-bold text-[#f97316] mb-3">
                   {item.title}
                 </h3>
+
                 <p className="text-gray-400 leading-relaxed text-sm">
                   {item.text}
                 </p>
@@ -462,6 +679,40 @@ const Impressao3DPage = () => {
           </div>
         </section>
 
+        {/* GALERIA / EXEMPLOS */}
+        <section className="mt-24">
+          <SectionLabel>Projetos e fabricação</SectionLabel>
+
+          <h2 className="text-3xl md:text-4xl font-black mb-4">
+            A impressão 3D aplicada a projetos reais
+          </h2>
+
+          <p className="text-gray-400 max-w-3xl leading-relaxed mb-10">
+            A tecnologia pode ser utilizada tanto para protótipos quanto para
+            componentes funcionais e peças personalizadas. O resultado depende
+            da geometria, do material e dos parâmetros definidos para cada aplicação.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            <ImageCard
+              src="/turbina-impressa.jpg"
+              alt="Componente técnico fabricado em impressão 3D"
+              title="Componentes técnicos"
+              description="Peças produzidas a partir de modelos tridimensionais desenvolvidos em CAD."
+              className="[&>div:first-child]:h-[330px]"
+            />
+
+            <ImageCard
+              src="/botao-impresso.jpg"
+              alt="Peça personalizada produzida por impressão 3D"
+              title="Peças personalizadas"
+              description="Produção sob demanda para projetos específicos."
+              className="[&>div:first-child]:h-[330px]"
+            />
+          </div>
+        </section>
+
+        {/* APLICAÇÕES */}
         <section className="mt-24">
           <SectionLabel>Aplicações</SectionLabel>
 
@@ -495,6 +746,7 @@ const Impressao3DPage = () => {
           </div>
         </section>
 
+        {/* VANTAGENS */}
         <section className="mt-24 grid lg:grid-cols-2 gap-12">
           <div>
             <SectionLabel>Por que utilizar impressão 3D?</SectionLabel>
@@ -519,18 +771,38 @@ const Impressao3DPage = () => {
 
           <div className="space-y-4">
             {[
-              ['01', 'Desenvolvimento rápido', 'Reduza o tempo entre a ideia e o primeiro protótipo físico.'],
-              ['02', 'Personalização', 'Produza peças específicas sem depender de grandes lotes.'],
-              ['03', 'Iteração', 'Faça alterações no modelo e produza novas versões rapidamente.'],
-              ['04', 'Integração CAD', 'Conecte o desenvolvimento digital diretamente à fabricação.'],
+              [
+                '01',
+                'Desenvolvimento rápido',
+                'Reduza o tempo entre a ideia e o primeiro protótipo físico.',
+              ],
+              [
+                '02',
+                'Personalização',
+                'Produza peças específicas sem depender de grandes lotes.',
+              ],
+              [
+                '03',
+                'Iteração',
+                'Faça alterações no modelo e produza novas versões rapidamente.',
+              ],
+              [
+                '04',
+                'Integração CAD',
+                'Conecte o desenvolvimento digital diretamente à fabricação.',
+              ],
             ].map(([number, title, text]) => (
               <div
                 key={number}
                 className="flex gap-5 p-5 bg-[#0d1426] border border-[#1a2540]"
               >
-                <span className="text-[#f97316] font-black">{number}</span>
+                <span className="text-[#f97316] font-black">
+                  {number}
+                </span>
+
                 <div>
                   <h3 className="font-bold mb-1">{title}</h3>
+
                   <p className="text-gray-400 text-sm leading-relaxed">
                     {text}
                   </p>
@@ -540,6 +812,7 @@ const Impressao3DPage = () => {
           </div>
         </section>
 
+        {/* PROCESSO */}
         <section className="mt-24">
           <SectionLabel>Processo de produção</SectionLabel>
 
@@ -549,10 +822,26 @@ const Impressao3DPage = () => {
 
           <div className="grid md:grid-cols-4 gap-4">
             {[
-              ['01', 'Análise', 'Entendemos a aplicação, dimensões e requisitos da peça.'],
-              ['02', 'Modelo 3D', 'Validamos o arquivo fornecido ou desenvolvemos a modelagem necessária.'],
-              ['03', 'Preparação', 'Definimos material e parâmetros adequados à fabricação.'],
-              ['04', 'Impressão', 'Produzimos a peça e realizamos a inspeção final.'],
+              [
+                '01',
+                'Análise',
+                'Entendemos a aplicação, dimensões e requisitos da peça.',
+              ],
+              [
+                '02',
+                'Modelo 3D',
+                'Validamos o arquivo fornecido ou desenvolvemos a modelagem necessária.',
+              ],
+              [
+                '03',
+                'Preparação',
+                'Definimos material e parâmetros adequados à fabricação.',
+              ],
+              [
+                '04',
+                'Impressão',
+                'Produzimos a peça e realizamos a inspeção final.',
+              ],
             ].map(([number, title, text]) => (
               <div
                 key={number}
@@ -561,7 +850,11 @@ const Impressao3DPage = () => {
                 <span className="text-[#f97316] text-sm font-black">
                   {number}
                 </span>
-                <h3 className="font-bold text-lg mt-4 mb-3">{title}</h3>
+
+                <h3 className="font-bold text-lg mt-4 mb-3">
+                  {title}
+                </h3>
+
                 <p className="text-gray-400 text-sm leading-relaxed">
                   {text}
                 </p>
@@ -570,6 +863,7 @@ const Impressao3DPage = () => {
           </div>
         </section>
 
+        {/* RELACIONADOS */}
         <section className="mt-24">
           <SectionLabel>Serviços relacionados</SectionLabel>
 
@@ -588,33 +882,20 @@ const Impressao3DPage = () => {
           </div>
         </section>
 
-        <section className="mt-20 p-8 md:p-12 bg-[#0d1426] border border-[#f97316]/30">
-          <span className="text-[#f97316] text-xs font-bold uppercase tracking-[0.2em]">
-            Impressão 3D sob demanda
-          </span>
-
-          <h2 className="text-3xl font-black mt-4 mb-4">
-            Tem uma peça para fabricar?
-          </h2>
-
-          <p className="text-gray-400 max-w-2xl leading-relaxed mb-7">
-            Envie o arquivo 3D, desenho, medidas ou imagens da peça. Avaliamos
-            a fabricação e indicamos o material mais adequado para sua aplicação.
-          </p>
-
-          <a
-            href="/#contato"
-            className="inline-block px-7 py-3 bg-[#f97316] font-bold text-sm hover:bg-[#ea580c] transition-colors"
-          >
-            Solicitar orçamento
-          </a>
-        </section>
+        <CTA
+          eyebrow="Impressão 3D sob demanda"
+          title="Tem uma peça para fabricar?"
+          description="Envie o arquivo 3D, desenho, medidas ou imagens da peça. Avaliamos a fabricação e indicamos o material mais adequado para sua aplicação."
+        />
       </div>
     </div>
   );
 };
 
-// Página: Engenharia Reversa
+// ============================================================
+// ENGENHARIA REVERSA
+// ============================================================
+
 const EngenhariaReversaPage = () => {
   return (
     <div className="bg-[#070b14] text-white min-h-screen pt-28 pb-24">
@@ -658,7 +939,57 @@ const EngenhariaReversaPage = () => {
           </div>
         </section>
 
+        {/* NARRATIVA ORIGINAL → CAD → IMPRESSÃO */}
         <section className="mt-20">
+          <SectionLabel>Do físico ao digital</SectionLabel>
+
+          <h2 className="text-3xl md:text-4xl font-black mb-4">
+            Da peça física ao componente fabricado
+          </h2>
+
+          <p className="text-gray-400 max-w-3xl leading-relaxed mb-10">
+            A engenharia reversa permite reconstruir uma peça existente e criar
+            uma documentação digital que pode ser utilizada em novas etapas de
+            desenvolvimento e fabricação.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-5">
+
+            <ImageCard
+              src="/turbina-original.jpg"
+              alt="Peça original utilizada como referência para engenharia reversa"
+              title="01 — Peça original"
+              description="O componente físico é analisado e utilizado como referência para o desenvolvimento."
+              className="[&>div:first-child]:h-[300px]"
+            />
+
+            <div className="relative">
+              <ImageCard
+                src="/turbina-cad.jpg"
+                alt="Modelo CAD reconstruído a partir de uma peça física"
+                title="02 — Modelo CAD"
+                description="A geometria é reconstruída digitalmente para permitir novas aplicações."
+                className="[&>div:first-child]:h-[300px]"
+              />
+
+              <div className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#f97316] items-center justify-center text-white font-bold z-10">
+                →
+              </div>
+            </div>
+
+            <ImageCard
+              src="/turbina-impressa.jpg"
+              alt="Peça reconstruída e fabricada por impressão 3D"
+              title="03 — Peça fabricada"
+              description="O modelo digital pode seguir para impressão 3D ou outro processo de fabricação."
+              className="[&>div:first-child]:h-[300px]"
+            />
+
+          </div>
+        </section>
+
+        {/* QUANDO UTILIZAR */}
+        <section className="mt-24">
           <SectionLabel>Quando utilizar</SectionLabel>
 
           <h2 className="text-3xl md:text-4xl font-black mb-10">
@@ -697,7 +1028,11 @@ const EngenhariaReversaPage = () => {
                 className="p-6 bg-[#0d1426] border border-[#1a2540] hover:border-[#f97316]/40 transition-colors"
               >
                 <div className="w-2 h-2 bg-[#f97316] mb-5" />
-                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
+
+                <h3 className="text-lg font-bold mb-3">
+                  {item.title}
+                </h3>
+
                 <p className="text-gray-400 text-sm leading-relaxed">
                   {item.text}
                 </p>
@@ -706,6 +1041,7 @@ const EngenhariaReversaPage = () => {
           </div>
         </section>
 
+        {/* PROCESSO */}
         <section className="mt-24">
           <SectionLabel>Processo de engenharia reversa</SectionLabel>
 
@@ -715,11 +1051,31 @@ const EngenhariaReversaPage = () => {
 
           <div className="grid md:grid-cols-5 gap-4">
             {[
-              ['01', 'Análise', 'Avaliamos a peça, sua aplicação e suas características.'],
-              ['02', 'Medição', 'Coletamos as dimensões necessárias para reconstruir a geometria.'],
-              ['03', 'Modelagem', 'Criamos o modelo tridimensional em ambiente CAD.'],
-              ['04', 'Validação', 'Conferimos dimensões e características importantes da peça.'],
-              ['05', 'Fabricação', 'O modelo pode ser utilizado para impressão 3D ou outro processo produtivo.'],
+              [
+                '01',
+                'Análise',
+                'Avaliamos a peça, sua aplicação e suas características.',
+              ],
+              [
+                '02',
+                'Medição',
+                'Coletamos as dimensões necessárias para reconstruir a geometria.',
+              ],
+              [
+                '03',
+                'Modelagem',
+                'Criamos o modelo tridimensional em ambiente CAD.',
+              ],
+              [
+                '04',
+                'Validação',
+                'Conferimos dimensões e características importantes da peça.',
+              ],
+              [
+                '05',
+                'Fabricação',
+                'O modelo pode ser utilizado para impressão 3D ou outro processo produtivo.',
+              ],
             ].map(([number, title, text]) => (
               <div
                 key={number}
@@ -728,7 +1084,11 @@ const EngenhariaReversaPage = () => {
                 <span className="text-[#f97316] text-sm font-black">
                   {number}
                 </span>
-                <h3 className="font-bold mt-4 mb-3">{title}</h3>
+
+                <h3 className="font-bold mt-4 mb-3">
+                  {title}
+                </h3>
+
                 <p className="text-gray-400 text-sm leading-relaxed">
                   {text}
                 </p>
@@ -737,6 +1097,7 @@ const EngenhariaReversaPage = () => {
           </div>
         </section>
 
+        {/* O QUE PODE SER ENTREGUE */}
         <section className="mt-24 grid lg:grid-cols-2 gap-12">
           <div>
             <SectionLabel>O que pode ser entregue</SectionLabel>
@@ -764,7 +1125,10 @@ const EngenhariaReversaPage = () => {
                   className="flex items-center gap-3 p-4 bg-[#0d1426] border border-[#1a2540]"
                 >
                   <span className="text-[#f97316]">✓</span>
-                  <span className="text-gray-300 text-sm">{item}</span>
+
+                  <span className="text-gray-300 text-sm">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
@@ -805,25 +1169,67 @@ const EngenhariaReversaPage = () => {
           </div>
         </section>
 
+        {/* FLUXO INTEGRADO */}
         <section className="mt-24">
-          <SectionLabel>Da engenharia à fabricação</SectionLabel>
+          <SectionLabel>Fluxo completo</SectionLabel>
 
           <h2 className="text-3xl font-black mb-8">
             Engenharia reversa + modelagem + impressão 3D
           </h2>
 
-          <div className="p-8 bg-[#0d1426] border border-[#1a2540]">
-            <p className="text-gray-400 leading-relaxed max-w-4xl">
-              Uma das principais vantagens do processo é integrar diferentes
-              etapas em um único fluxo de desenvolvimento. A peça física pode ser
-              analisada, transformada em um modelo CAD e posteriormente fabricada
-              por impressão 3D. Dessa forma, a engenharia reversa deixa de ser
-              apenas uma reconstrução geométrica e passa a fazer parte de um
-              processo completo de desenvolvimento e fabricação.
-            </p>
+          <div className="p-8 md:p-10 bg-[#0d1426] border border-[#1a2540]">
+            <div className="grid md:grid-cols-3 gap-8">
+
+              <div>
+                <span className="text-[#f97316] text-xs font-black">
+                  ETAPA 01
+                </span>
+
+                <h3 className="text-xl font-bold mt-3 mb-3">
+                  Captura da geometria
+                </h3>
+
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  A peça existente é analisada e medida para obter as informações
+                  necessárias à reconstrução.
+                </p>
+              </div>
+
+              <div>
+                <span className="text-[#f97316] text-xs font-black">
+                  ETAPA 02
+                </span>
+
+                <h3 className="text-xl font-bold mt-3 mb-3">
+                  Desenvolvimento CAD
+                </h3>
+
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  As informações são transformadas em uma geometria tridimensional
+                  organizada e utilizável.
+                </p>
+              </div>
+
+              <div>
+                <span className="text-[#f97316] text-xs font-black">
+                  ETAPA 03
+                </span>
+
+                <h3 className="text-xl font-bold mt-3 mb-3">
+                  Fabricação
+                </h3>
+
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  O modelo pode ser utilizado para impressão 3D ou encaminhado para
+                  outro processo de fabricação.
+                </p>
+              </div>
+
+            </div>
           </div>
         </section>
 
+        {/* SERVIÇOS RELACIONADOS */}
         <section className="mt-24">
           <SectionLabel>Serviços relacionados</SectionLabel>
 
@@ -842,33 +1248,21 @@ const EngenhariaReversaPage = () => {
           </div>
         </section>
 
-        <section className="mt-20 p-8 md:p-12 bg-[#0d1426] border border-[#f97316]/30">
-          <span className="text-[#f97316] text-xs font-bold uppercase tracking-[0.2em]">
-            Possui uma peça física?
-          </span>
-
-          <h2 className="text-3xl font-black mt-4 mb-4">
-            Podemos transformar sua peça em um modelo 3D
-          </h2>
-
-          <p className="text-gray-400 max-w-2xl leading-relaxed mb-7">
-            Entre em contato e explique o que você precisa. Fotos, medidas e
-            informações sobre a aplicação da peça já podem ajudar na avaliação
-            inicial do projeto.
-          </p>
-
-          <a
-            href="/#contato"
-            className="inline-block px-7 py-3 bg-[#f97316] font-bold text-sm hover:bg-[#ea580c] transition-colors"
-          >
-            Solicitar avaliação
-          </a>
-        </section>
+        <CTA
+          eyebrow="Possui uma peça física?"
+          title="Podemos transformar sua peça em um modelo 3D"
+          description="Entre em contato e explique o que você precisa. Fotos, medidas e informações sobre a aplicação da peça já podem ajudar na avaliação inicial do projeto."
+          buttonText="Solicitar avaliação"
+        />
 
       </div>
     </div>
   );
 };
+
+// ============================================================
+// APP
+// ============================================================
 
 export default function App() {
   return (
