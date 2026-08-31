@@ -38,7 +38,7 @@ export default function Hero() {
         <circle cx="70%" cy="80%" r="4" fill="#f97316" />
       </svg>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center translate-y-8 md:translate-y-12">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center translate-y-16 md:translate-y-20">
         {/* Eyebrow tag */}
         <div className="inline-flex items-center gap-2 border border-[#f97316]/40 text-[#f97316] text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 mb-8">
           <span className="w-2 h-2 bg-[#f97316] rounded-full animate-pulse" />
