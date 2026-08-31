@@ -538,7 +538,35 @@ const ModelagemCADPage = () => {
             />
           </div>
         </section>
+{/* SERVIÇOS RELACIONADOS */}
+<section className="mt-24">
+  <SectionLabel>Serviços relacionados</SectionLabel>
 
+  <h2 className="text-3xl md:text-4xl font-black mb-5">
+    Da modelagem à fabricação
+  </h2>
+
+  <p className="text-gray-400 max-w-3xl leading-relaxed mb-10">
+    A modelagem 3D e o projeto CAD podem ser apenas uma das etapas do
+    desenvolvimento. Quando necessário, também trabalhamos com impressão
+    3D e engenharia reversa para transformar informações físicas ou digitais
+    em peças e protótipos funcionais.
+  </p>
+
+  <div className="grid md:grid-cols-2 gap-5">
+    <ServiceCard
+      title="Impressão 3D Personalizada"
+      description="Produza o modelo desenvolvido em CAD como peça técnica, protótipo funcional ou componente personalizado por impressão 3D."
+      to="/servicos/impressao-3d-personalizada"
+    />
+
+    <ServiceCard
+      title="Engenharia Reversa"
+      description="Quando a peça física é o ponto de partida, reconstruímos sua geometria para criar um modelo CAD utilizável no desenvolvimento e fabricação."
+      to="/servicos/engenharia-reversa"
+    />
+  </div>
+</section>
         <CTA
           eyebrow="Precisa de um projeto?"
           title="Transforme sua ideia em um modelo 3D"
